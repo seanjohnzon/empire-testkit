@@ -24,6 +24,12 @@ jobs:
       - run: npm install
       - run: npm run snapshot
 
+      - run: |
+          mkdir -p .snapshot
+          if [ ! -f ".snapshot/index.html" ]; then
+            echo '<h1>Empire Testkit Snapshot</h1><p>(auto-generated fallback)</p>' > .snapshot/index.html
+          fi
+
       # Ensure the site exists: .snapshot/index.html should be present
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
