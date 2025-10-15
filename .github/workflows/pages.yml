@@ -19,21 +19,42 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
 
-      # Run your generator directly (no npm)
-      - name: Generate snapshot
-        run: node scripts/snapshot.mjs
-
-      # Ensure something exists to publish
-      - name: Ensure index.html
+      # Build a static snapshot using bash only (no npm/node scripts)
+      - name: Build snapshot (bash only)
+        shell: bash
         run: |
-          mkdir -p .snapshot
-          if [ ! -f .snapshot/index.html ]; then
-            echo '<!doctype html><meta charset="utf-8"><title>Empire Testkit Snapshot</title><h1>Snapshot</h1>' > .snapshot/index.html
-          fi
+          set -euo pipefail
+          mkdir -p .snapshot/files
+
+          # List tracked files and generate html pages with escaped content
+          git ls-files | while read -r f; do
+            # skip non-source folders
+            case "$f" in
+              node_modules/*|.git/*|.snapshot/*|.github/*|.vitest-reports/*|dist/*|build/*|coverage/*|.next/*)
+                continue
+                ;;
+            esac
+            mkdir -p ".snapshot/files/$(dirname "$f")"
+            # Escape HTML and wrap in <pre>
+            {
+              echo '<!doctype html><meta charset="utf-8"><title>'"$f"'</title><h2>'"$f"'</h2><pre>'
+              sed -e 's/&/\&amp;/g' -e 's/</\&lt;/g' "$f"
+              echo '</pre>'
+            } > ".snapshot/files/$f.html"
+          done
+
+          # Build index
+          {
+            echo '<!doctype html><meta charset="utf-8"><title>Empire Testkit Snapshot</title><h1>Empire Testkit Snapshot</h1><ul>'
+            git ls-files | while read -r f; do
+              case "$f" in
+                node_modules/*|.git/*|.snapshot/*|.github/*|.vitest-reports/*|dist/*|build/*|coverage/*|.next/*) continue ;;
+              esac
+              echo "<li><a href=\"files/$f.html\">$f</a></li>"
+            done
+            echo '</ul>'
+          } > .snapshot/index.html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
