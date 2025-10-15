@@ -5,6 +5,10 @@ on:
   pull_request:
   workflow_dispatch:
 
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 */6 * * *"
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -32,3 +36,23 @@ jobs:
           path: |
             .vitest-reports/json.json
             reports/requirements.md
+        with: { node-version: 20, cache: "pnpm" }
+      - uses: pnpm/action-setup@v4
+        with: { version: 9 }
+      - run: pnpm install
+      - run: pnpm ci
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+          SOLANA_CLUSTER: devnet
+          SOLANA_RPC_URL: ${{ secrets.SOLANA_RPC_URL }}
+          PROGRAM_ID: ${{ secrets.PROGRAM_ID }}
+          BOND_MINT: ${{ secrets.BOND_MINT }}
+          SEASON_PUBKEY: ${{ secrets.SEASON_PUBKEY }}
+          TEST_WALLET_SECRET_BASE58: ${{ secrets.TEST_WALLET_SECRET_BASE58 }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: test-report
+          path: |
+            report.json
+            tests/.results.json
