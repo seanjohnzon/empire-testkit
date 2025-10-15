@@ -6,6 +6,8 @@
   "scripts": {
     "test": "vitest run --reporter=verbose --reporter=json --outputFile=.vitest-reports/json.json",
     "report:req": "node scripts/gen-req-report.mjs",
+    "ci": "npm run test && npm run report:req",
+    "snapshot": "node scripts/snapshot.mjs"
     "ci": "npm run test && npm run report:req"
     "test": "vitest run --reporter=verbose",
     "report": "ts-node ./src/lib/metrics.ts",
