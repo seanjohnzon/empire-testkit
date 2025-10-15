@@ -7,6 +7,9 @@
     "test": "vitest run --reporter=verbose --reporter=json --outputFile=.vitest-reports/json.json",
     "report:req": "node scripts/gen-req-report.mjs",
     "ci": "npm run test && npm run report:req"
+    "test": "vitest run --reporter=verbose",
+    "report": "ts-node ./src/lib/metrics.ts",
+    "ci": "pnpm test && pnpm report"
   },
   "devDependencies": {
     "@coral-xyz/anchor": "0.30.1",
