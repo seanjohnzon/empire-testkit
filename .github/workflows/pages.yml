@@ -2,28 +2,31 @@ name: Deploy Snapshot
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  pages: write
+  id-token: write
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
     environment:
       name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: npm ci
+
+      # Use install (no lockfile in repo), then build the snapshot site
+      - run: npm install
       - run: npm run snapshot
+
+      # Ensure the site exists: .snapshot/index.html should be present
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
           path: .snapshot
-      - id: deploy
-        uses: actions/deploy-pages@v4
+      - uses: actions/deploy-pages@v4
