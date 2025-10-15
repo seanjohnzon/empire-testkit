@@ -22,24 +22,28 @@ jobs:
         with:
           node-version: 20
 
-      # Run the snapshot script directly (no npm)
+      # Run snapshot generator directly (no npm, no lockfile needed)
       - name: Generate snapshot
         run: node scripts/snapshot.mjs
 
-      # Fallback: ensure an index.html exists so Pages has something to serve
+      # Ensure .snapshot/index.html exists (robust, no YAML quoting issues)
       - name: Ensure index.html
         run: |
           mkdir -p .snapshot
           if [ ! -f ".snapshot/index.html" ]; then
-            echo '<h1>Empire Testkit Snapshot</h1><p>(auto-generated fallback)</p>' > .snapshot/index.html
+            cat > .snapshot/index.html <<'HTML'
+            <!doctype html>
+            <meta charset="utf-8">
+            <title>Empire Testkit Snapshot</title>
+            <h1>Empire Testkit Snapshot</h1>
+            <p>(Auto-generated fallback index)</p>
+            HTML
           fi
 
       - uses: actions/configure-pages@v5
-
       - uses: actions/upload-pages-artifact@v3
         with:
           path: .snapshot
-
       - id: deployment
         uses: actions/deploy-pages@v4
 
