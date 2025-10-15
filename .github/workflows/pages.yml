@@ -6,6 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
+  contents: read
   pages: write
   id-token: write
 
@@ -16,23 +17,31 @@ jobs:
       name: github-pages
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      # Use install (no lockfile in repo), then build the snapshot site
-      - run: npm install
-      - run: npm run snapshot
+      # Run the snapshot script directly (no npm)
+      - name: Generate snapshot
+        run: node scripts/snapshot.mjs
 
-      - run: |
+      # Fallback: ensure an index.html exists so Pages has something to serve
+      - name: Ensure index.html
+        run: |
           mkdir -p .snapshot
           if [ ! -f ".snapshot/index.html" ]; then
             echo '<h1>Empire Testkit Snapshot</h1><p>(auto-generated fallback)</p>' > .snapshot/index.html
           fi
 
-      # Ensure the site exists: .snapshot/index.html should be present
       - uses: actions/configure-pages@v5
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: .snapshot
-      - uses: actions/deploy-pages@v4
+
+      - id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Print Pages URL
+        run: echo "Pages URL: ${{ steps.deployment.outputs.page_url }}"
