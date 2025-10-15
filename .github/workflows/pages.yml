@@ -2,7 +2,7 @@ name: Deploy Snapshot
 
 on:
   push:
-    branches: [ main ]
+    branches: ["main"]
   workflow_dispatch:
 
 permissions:
@@ -10,42 +10,42 @@ permissions:
   pages: write
   id-token: write
 
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      # Run snapshot generator directly (no npm, no lockfile needed)
+      # Run your generator directly (no npm)
       - name: Generate snapshot
         run: node scripts/snapshot.mjs
 
-      # Ensure .snapshot/index.html exists (robust, no YAML quoting issues)
+      # Ensure something exists to publish
       - name: Ensure index.html
         run: |
           mkdir -p .snapshot
-          if [ ! -f ".snapshot/index.html" ]; then
-            cat > .snapshot/index.html <<'HTML'
-            <!doctype html>
-            <meta charset="utf-8">
-            <title>Empire Testkit Snapshot</title>
-            <h1>Empire Testkit Snapshot</h1>
-            <p>(Auto-generated fallback index)</p>
-            HTML
+          if [ ! -f .snapshot/index.html ]; then
+            echo '<!doctype html><meta charset="utf-8"><title>Empire Testkit Snapshot</title><h1>Snapshot</h1>' > .snapshot/index.html
           fi
 
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
           path: .snapshot
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
       - id: deployment
         uses: actions/deploy-pages@v4
-
-      - name: Print Pages URL
-        run: echo "Pages URL: ${{ steps.deployment.outputs.page_url }}"
