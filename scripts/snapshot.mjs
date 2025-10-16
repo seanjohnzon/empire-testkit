@@ -2,68 +2,48 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const root = process.cwd();
-const outDir = path.join(root, '.snapshot');
-const filesDir = path.join(outDir, 'files');
-
-const IGNORE = new Set([
-  'node_modules', '.git', '.github', '.vitest-reports',
-  'dist', 'build', 'coverage', '.next', '.cache',
-  'reports', 'tmp', '.DS_Store', '.snapshot'
+const outputPath = path.join(root, 'reports', 'source-snapshot.md');
+const ignore = new Set([
+  'node_modules',
+  '.git',
+  '.github',
+  '.vitest-reports',
+  'dist',
+  'build',
+  'coverage',
+  '.next'
 ]);
 
-function walk(relPath = '') {
-  const absPath = path.join(root, relPath);
-  const entries = fs.readdirSync(absPath, { withFileTypes: true });
-  const children = [];
+function walk(dir = '') {
+  const abs = path.join(root, dir);
+  const entries = fs.readdirSync(abs, { withFileTypes: true });
+  const files = [];
   for (const entry of entries) {
     const name = entry.name;
-    if (IGNORE.has(name)) continue;
-    const entryRel = relPath ? path.join(relPath, name) : name;
-    const entryAbs = path.join(root, entryRel);
+    if (ignore.has(name)) continue;
+    const rel = dir ? `${dir}/${name}` : name;
     if (entry.isDirectory()) {
-      const child = walk(entryRel);
-      children.push({ type: 'dir', name, rel: entryRel, children: child.children });
+      files.push(...walk(rel));
     } else if (entry.isFile()) {
-      const destPath = path.join(filesDir, entryRel) + '.txt';
-      fs.mkdirSync(path.dirname(destPath), { recursive: true });
-      const content = fs.readFileSync(entryAbs, 'utf8');
-      fs.writeFileSync(destPath, content, 'utf8');
-      children.push({ type: 'file', name, rel: entryRel });
+      files.push(rel);
     }
   }
-  children.sort((a, b) => (a.type === b.type) ? a.name.localeCompare(b.name) : (a.type === 'dir' ? -1 : 1));
-  return { type: 'dir', name: relPath || '', rel: relPath || '', children };
+  return files;
 }
 
-function escapeHtml(s) {
-  return s.replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-}
-function toLink(rel) {
-  const segs = rel.split(path.sep).map(encodeURIComponent);
-  return `files/${segs.join('/')}.txt`;
-}
-function render(nodes) {
-  if (!nodes.length) return '';
-  const items = nodes.map(node => {
-    if (node.type === 'dir') {
-      return `<li><details open><summary>${escapeHtml(node.name)}/</summary>${render(node.children)}</details></li>`;
-    }
-    return `<li><a href="${toLink(node.rel).replace(/\\/g,'/')}">${escapeHtml(node.name)}</a></li>`;
-  });
-  return `<ul>${items.join('')}</ul>`;
-}
+const files = walk('').sort((a, b) => a.localeCompare(b));
+fs.mkdirSync(path.dirname(outputPath), { recursive: true });
 
-fs.rmSync(outDir, { recursive: true, force: true });
-fs.mkdirSync(filesDir, { recursive: true });
-
-const tree = walk('');
-const html = `<!DOCTYPE html>
-<html lang="en">
-<meta charset="utf-8" />
-<title>Empire Testkit Snapshot</title>
-<style>body{font-family:sans-serif;padding:2rem}details>summary{cursor:pointer}ul{list-style:none;padding-left:1rem}li{margin:.25rem 0}</style>
-<h1>Empire Testkit Snapshot</h1>
-${render(tree.children)}
-`;
-fs.writeFileSync(path.join(outDir, 'index.html'), html, 'utf8');
-console.log('Snapshot created at', outDir);
+let md = '# Source Snapshot\n\n';
+for (const rel of files) {
+  if (rel === 'reports/source-snapshot.md') continue;
+  const abs = path.join(root, rel);
+  const ext = path.extname(rel).slice(1) || 'text';
+  const content = fs.readFileSync(abs, 'utf8');
+  md += `## ${rel}\n\n`;
+  md += `\`\`\`${ext}\n`;
+  md += `${content.replace(/\r\n/g, '\n')}\n`;
+  md += '\`\`\`\n\n';
+}
+fs.writeFileSync(outputPath, md, 'utf8');
+console.log('Wrote', path.relative(root, outputPath));

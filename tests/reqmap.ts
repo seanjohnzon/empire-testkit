@@ -8,6 +8,4 @@ export const REQ_MAP: Record<string, string[]> = {
   'REQ-401/402: economy stats totals and recents': ['REQ-401', 'REQ-402'],
   'REQ-520/521: referral capture idempotent': ['REQ-520', 'REQ-521'],
   'REQ-160/145: sign claim returns signature and halving multiplier': ['REQ-160', 'REQ-145']
-  'REQ-105B: 200 and returns breakdown for known wallet': ['REQ-105','REQ-124','REQ-242'],
-  'REQ-201: cooldown immediate second call yields <= previous': ['REQ-201']
 };
