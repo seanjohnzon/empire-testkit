@@ -16,22 +16,31 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
+          # no cache: npm (avoids lockfile error)
 
       - name: Install deps
-        run: npm ci || npm i
+        run: npm ci || npm i --no-fund --no-audit
+
+      # Optional: quick sanity check so we can see envs exist (lengths only).
+      - name: Sanity check env presence
+        run: |
+          echo "Has SUPABASE_URL? $([[ -n \"$SUPABASE_URL\" ]] && echo yes || echo no)"
+          echo "Has SUPABASE_ANON_KEY? $([[ -n \"$SUPABASE_ANON_KEY\" ]] && echo yes || echo no)"
+        env:
+          SUPABASE_URL:      ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
 
       - name: Run tests & build HTML report
         env:
-          SUPABASE_URL:               ${{ secrets.SUPABASE_URL }}
-          SUPABASE_ANON_KEY:          ${{ secrets.SUPABASE_ANON_KEY }}
-          TEST_WALLET:                ${{ secrets.TEST_WALLET }}
-          OPEN_PACK_FN:               ${{ secrets.OPEN_PACK_FN }}
-          TRAIN_UNIT_FN:              ${{ secrets.TRAIN_UNIT_FN }}
-          ECONOMY_STATS_FN:           ${{ secrets.ECONOMY_STATS_FN }}
-          REFERRAL_CAPTURE_FN:        ${{ secrets.REFERRAL_CAPTURE_FN }}
-          SIGN_CLAIM_FN:              ${{ secrets.SIGN_CLAIM_FN }}
-          SEASON_PUBKEY:              ${{ secrets.SEASON_PUBKEY }}
+          SUPABASE_URL:        ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY:   ${{ secrets.SUPABASE_ANON_KEY }}
+          TEST_WALLET:         ${{ secrets.TEST_WALLET }}
+          OPEN_PACK_FN:        ${{ secrets.OPEN_PACK_FN }}
+          TRAIN_UNIT_FN:       ${{ secrets.TRAIN_UNIT_FN }}
+          ECONOMY_STATS_FN:    ${{ secrets.ECONOMY_STATS_FN }}
+          REFERRAL_CAPTURE_FN: ${{ secrets.REFERRAL_CAPTURE_FN }}
+          SIGN_CLAIM_FN:       ${{ secrets.SIGN_CLAIM_FN }}
+          SEASON_PUBKEY:       ${{ secrets.SEASON_PUBKEY }}
         run: npm run ci:html
 
       - name: Upload HTML report
