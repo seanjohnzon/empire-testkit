@@ -1,0 +1,27 @@
+name: CI HTML Report
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm install
+      - run: npm run ci:html
+      - uses: actions/upload-artifact@v4
+        with:
+          name: html-report
+          path: |
+            reports/index.html
+            reports/assets
+            .vitest-reports/json.json
+            reports/requirements.md
