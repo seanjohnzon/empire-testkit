@@ -15,8 +15,22 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+
       - run: npm install --no-audit --no-fund
-      - run: npm run ci:html
+
+      - name: Run tests & build HTML report
+        run: npm run ci:html
+        env:
+          SUPABASE_URL:          ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY:     ${{ secrets.SUPABASE_ANON_KEY }}
+          TEST_WALLET:           ${{ secrets.TEST_WALLET }}
+          OPEN_PACK_FN:          ${{ secrets.OPEN_PACK_FN }}
+          TRAIN_UNIT_FN:         ${{ secrets.TRAIN_UNIT_FN }}
+          ECONOMY_STATS_FN:      ${{ secrets.ECONOMY_STATS_FN }}
+          REFERRAL_CAPTURE_FN:   ${{ secrets.REFERRAL_CAPTURE_FN }}
+          SIGN_CLAIM_FN:         ${{ secrets.SIGN_CLAIM_FN }}
+          SEASON_PUBKEY:         ${{ secrets.SEASON_PUBKEY }}
+
       - uses: actions/upload-artifact@v4
         with:
           name: html-report
