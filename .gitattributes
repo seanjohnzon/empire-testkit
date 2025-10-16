@@ -1,0 +1,7 @@
+# Always keep OUR version on merge/rebase
+.env.example                 merge=ours
+.github/workflows/ci.yml     merge=ours
+.github/workflows/pages.yml  merge=ours
+package.json                 merge=ours
+scripts/snapshot.mjs         merge=ours
+tests/reqmap.ts              merge=ours
