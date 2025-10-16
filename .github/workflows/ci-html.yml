@@ -12,24 +12,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      # remove cache: npm — lockfile is not present
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-
-      # install without audit/fund noise
       - run: npm install --no-audit --no-fund
-
-      # run tests + generate HTML
       - run: npm run ci:html
-
-      # upload the HTML report artifact
       - uses: actions/upload-artifact@v4
         with:
           name: html-report
           path: |
-            reports/index.html
-            reports/assets
+            reports/
             .vitest-reports/json.json
-            reports/requirements.md
