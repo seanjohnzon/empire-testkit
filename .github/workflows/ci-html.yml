@@ -1,22 +1,33 @@
 name: CI HTML Report
 
 on:
-  workflow_dispatch:
   push:
     branches: [ main ]
   pull_request:
+  workflow_dispatch:
 
 jobs:
   tests:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
-      - run: npm install
+          cache: 'npm'
+
+      # Install deps using lockfile (fast, reproducible)
+      - run: npm ci
+
+      # Run tests -> creates:
+      # - .vitest-reports/json.json
+      # - reports/index.html (and assets)
+      # - reports/requirements.md
       - run: npm run ci:html
+
+      # Publish the HTML report as a build artifact
       - uses: actions/upload-artifact@v4
         with:
           name: html-report
