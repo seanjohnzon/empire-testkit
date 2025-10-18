@@ -1,0 +1,9 @@
+node_modules/
+.vscode/
+.snapshot/
+dist/
+coverage/
+.vitest-reports/
+reports/assets/
+
+

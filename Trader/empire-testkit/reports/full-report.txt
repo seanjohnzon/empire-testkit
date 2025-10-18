@@ -1,0 +1,2817 @@
+EMPIRE TEST REPORT
+Generated: 10/18/2025, 10:27:48 AM
+================================================================================
+
+SUMMARY
+-------
+Total Tests:  46
+Passed:       45
+Failed:       1
+REQ Complete: 100%
+Scenarios:    353
+
+REQUIREMENTS STATUS
+-------------------
+REQ-401: PASSING (✓2 ✗0)
+  Tests: REQ-401/402: economy stats totals and recents with new ledger kinds, REQ-401/402: economy stats totals and recents with new ledger kinds
+
+REQ-001: PASSING (✓3 ✗0)
+  Tests: REQ-001: list-seasons returns array (or 405 if method mismatch), REQ-001: list-seasons returns array (or 405 if method mismatch), REQ-002: toggle-season admin-only (403 non-admin, 405 wrong method, or 200/400 if admin)
+
+REQ-002: PASSING (✓1 ✗0)
+  Tests: REQ-002: toggle-season admin-only (403 non-admin, 405 wrong method, or 200/400 if admin)
+
+REQ-310: PASSING (✓2 ✗0)
+  Tests: REQ-310/315/318: pack grants cars with tier_key, level=1, and correct stats, REQ-310/315/318: pack grants cars with tier_key, level=1, and correct stats
+
+REQ-340: PASSING (✓4 ✗0)
+  Tests: REQ-340: recycle returns either promote or burn result, REQ-340: recycle returns either promote or burn result, REQ-341: recycle promotes ~20% of the time (probabilistic), REQ-342: cannot recycle godspeed tier (max tier)
+
+REQ-341: PASSING (✓1 ✗0)
+  Tests: REQ-341: recycle promotes ~20% of the time (probabilistic)
+
+REQ-342: PASSING (✓1 ✗0)
+  Tests: REQ-342: cannot recycle godspeed tier (max tier)
+
+REQ-520: PASSING (✓6 ✗0)
+  Tests: REQ-520: referral capture first set returns 200, REQ-520: referral capture first set returns 200, REQ-521: referral capture change attempt returns 409, REQ-522: referral capture with same code is idempotent (200), REQ-523: referral capture with missing wallet returns 400, REQ-524: referral capture with non-existent wallet returns 404
+
+REQ-521: PASSING (✓1 ✗0)
+  Tests: REQ-521: referral capture change attempt returns 409
+
+REQ-522: PASSING (✓1 ✗0)
+  Tests: REQ-522: referral capture with same code is idempotent (200)
+
+REQ-523: PASSING (✓1 ✗0)
+  Tests: REQ-523: referral capture with missing wallet returns 400
+
+REQ-524: PASSING (✓1 ✗0)
+  Tests: REQ-524: referral capture with non-existent wallet returns 404
+
+REQ-160: PASSING (✓2 ✗0)
+  Tests: REQ-160/145: sign claim returns signature and halving multiplier, REQ-160/145: sign claim returns signature and halving multiplier
+
+REQ-330: PASSING (✓4 ✗0)
+  Tests: REQ-330/315/318: training upgrades level only (1→3), never tier, with correct cost curve, REQ-330/315/318: training upgrades level only (1→3), never tier, with correct cost curve, REQ-331: training cannot exceed level 3, REQ-332: training cost curve verification
+
+REQ-331: PASSING (✓1 ✗0)
+  Tests: REQ-331: training cannot exceed level 3
+
+REQ-332: PASSING (✓1 ✗0)
+  Tests: REQ-332: training cost curve verification
+
+TEST DETAILS
+------------
+
+[1] REQ-CLAIM-001a: rejects claim when no motor power
+    Status: ✓ PASSED
+    Duration: 1496ms
+    REQs: none
+    Suite: /Users/sahcihansahin/Trader/empire-testkit/tests/claim-rewards.spec.ts
+
+[2] REQ-CLAIM-001b: claim returns >0 when MP>0 and time elapsed
+    Status: ✓ PASSED
+    Duration: 3539ms
+    REQs: none
+    Suite: /Users/sahcihansahin/Trader/empire-testkit/tests/claim-rewards.spec.ts
+
+[3] REQ-CLAIM-001c: validates claim calculation formula
+    Status: ✓ PASSED
+    Duration: 0ms
+    REQs: none
+    Suite: /Users/sahcihansahin/Trader/empire-testkit/tests/claim-rewards.spec.ts
+
+[4] REQ-CLAIM-REFERRAL-001a: referral payouts with 2-level chain
+    Status: ✓ PASSED
+    Duration: 5189ms
+    REQs: none
+    Suite: /Users/sahcihansahin/Trader/empire-testkit/tests/claim-rewards.spec.ts
+
+[5] REQ-CLAIM-REFERRAL-001b: validates referral percentage constants
+    Status: ✗ FAILED
+    Duration: 6ms
+    REQs: none
+    Suite: /Users/sahcihansahin/Trader/empire-testkit/tests/claim-rewards.spec.ts
+
+[6] REQ-CLAIM-001d: enforces minimum time between claims
+    Status: ✓ PASSED
+    Duration: 3018ms
+    REQs: none
+    Suite: /Users/sahcihansahin/Trader/empire-testkit/tests/claim-rewards.spec.ts
+
+[7] REQ-401/402: economy stats totals and recents with new ledger kinds
+    Status: ✓ PASSED
+    Duration: 347ms
+    REQs: REQ-401, REQ-401
+    Suite: /Users/sahcihansahin/Trader/empire-testkit/tests/economy-stats.spec.ts
+
+[8] REQ-001: list-seasons returns array (or 405 if method mismatch)
+    Status: ✓ PASSED
+    Duration: 421ms
+    REQs: REQ-001, REQ-001
+    Suite: /Users/sahcihansahin/Trader/empire-testkit/tests/edge.seasons.spec.ts
+
+[9] REQ-002: toggle-season admin-only (403 non-admin, 405 wrong method, or 200/400 if admin)
+    Status: ✓ PASSED
+    Duration: 163ms
+    REQs: REQ-001, REQ-002
+    Suite: /Users/sahcihansahin/Trader/empire-testkit/tests/edge.seasons.spec.ts
+
+[10] REQ-GARAGE-SLOTS-001a: can update slots within L1 capacity
+    Status: ✓ PASSED
+    Duration: 1255ms
+    REQs: none
+    Suite: /Users/sahcihansahin/Trader/empire-testkit/tests/garage-slots.spec.ts
+
+[11] REQ-GARAGE-SLOTS-001b: rejects slots exceeding L1 capacity
+    Status: ✓ PASSED
+    Duration: 886ms
+    REQs: none
+    Suite: /Users/sahcihansahin/Trader/empire-testkit/tests/garage-slots.spec.ts
+
+[12] REQ-GARAGE-SLOTS-001c: allows empty slots
+    Status: ✓ PASSED
+    Duration: 992ms
+    REQs: none
+    Suite: /Users/sahcihansahin/Trader/empire-testkit/tests/garage-slots.spec.ts
+
+[13] REQ-GARAGE-SLOTS-001d: correctly calculates motor power
+    Status: ✓ PASSED
+    Duration: 1099ms
+    REQs: none
+    Suite: /Users/sahcihansahin/Trader/empire-testkit/tests/garage-slots.spec.ts
+
+[14] REQ-GARAGE-SLOTS-001e: capacity expectations match garage levels
+    Status: ✓ PASSED
+    Duration: 2ms
+    REQs: none
+    Suite: /Users/sahcihansahin/Trader/empire-testkit/tests/garage-slots.spec.ts
+
+[15] REQ-INIT-001a: creates profile with 3 starter cars and garage_level=1
+    Status: ✓ PASSED
+    Duration: 783ms
+    REQs: none
+    Suite: /Users/sahcihansahin/Trader/empire-testkit/tests/init-player.spec.ts
+
+[16] REQ-INIT-001b: init is idempotent (returns 200 on second call)
+    Status: ✓ PASSED
+    Duration: 1186ms
+    REQs: none
+    Suite: /Users/sahcihansahin/Trader/empire-testkit/tests/init-player.spec.ts
+
+[17] REQ-INIT-001c: attaches referrer if provided
+    Status: ✓ PASSED
+    Duration: 1222ms
+    REQs: none
+    Suite: /Users/sahcihansahin/Trader/empire-testkit/tests/init-player.spec.ts
+
+[18] REQ-INIT-001d: rejects invalid treasury signature
+    Status: ✓ PASSED
+    Duration: 342ms
+    REQs: none
+    Suite: /Users/sahcihansahin/Trader/empire-testkit/tests/init-player.spec.ts
+
+[19] REQ-INIT-001e: requires wallet parameter
+    Status: ✓ PASSED
+    Duration: 346ms
+    REQs: none
+    Suite: /Users/sahcihansahin/Trader/empire-testkit/tests/init-player.spec.ts
+
+[20] REQ-310/315/318: pack grants cars with tier_key, level=1, and correct stats
+    Status: ✓ PASSED
+    Duration: 244ms
+    REQs: REQ-310, REQ-310
+    Suite: /Users/sahcihansahin/Trader/empire-testkit/tests/open-pack.spec.ts
+
+[21] REQ-PACKS-LIMIT-001a: enforces daily pack limit at level 1
+    Status: ✓ PASSED
+    Duration: 1024ms
+    REQs: none
+    Suite: /Users/sahcihansahin/Trader/empire-testkit/tests/pack-limits.spec.ts
+
+[22] REQ-PACKS-LIMIT-001b: returns correct daily limit info
+    Status: ✓ PASSED
+    Duration: 985ms
+    REQs: none
+    Suite: /Users/sahcihansahin/Trader/empire-testkit/tests/pack-limits.spec.ts
+
+[23] REQ-PACKS-LIMIT-001c: daily limit increases with garage level
+    Status: ✓ PASSED
+    Duration: 0ms
+    REQs: none
+    Suite: /Users/sahcihansahin/Trader/empire-testkit/tests/pack-limits.spec.ts
+
+[24] REQ-PACKS-LIMIT-001d: respects pack limit across multiple small openings
+    Status: ✓ PASSED
+    Duration: 1223ms
+    REQs: none
+    Suite: /Users/sahcihansahin/Trader/empire-testkit/tests/pack-limits.spec.ts
+
+[25] REQ-340: recycle returns either promote or burn result
+    Status: ✓ PASSED
+    Duration: 279ms
+    REQs: REQ-340, REQ-340
+    Suite: /Users/sahcihansahin/Trader/empire-testkit/tests/recycle-unit.spec.ts
+
+[26] REQ-341: recycle promotes ~20% of the time (probabilistic)
+    Status: ✓ PASSED
+    Duration: 125ms
+    REQs: REQ-340, REQ-341
+    Suite: /Users/sahcihansahin/Trader/empire-testkit/tests/recycle-unit.spec.ts
+
+[27] REQ-342: cannot recycle godspeed tier (max tier)
+    Status: ✓ PASSED
+    Duration: 145ms
+    REQs: REQ-340, REQ-342
+    Suite: /Users/sahcihansahin/Trader/empire-testkit/tests/recycle-unit.spec.ts
+
+[28] REQ-520: referral capture first set returns 200
+    Status: ✓ PASSED
+    Duration: 212ms
+    REQs: REQ-520, REQ-520
+    Suite: /Users/sahcihansahin/Trader/empire-testkit/tests/referral-capture.spec.ts
+
+[29] REQ-521: referral capture change attempt returns 409
+    Status: ✓ PASSED
+    Duration: 449ms
+    REQs: REQ-520, REQ-521
+    Suite: /Users/sahcihansahin/Trader/empire-testkit/tests/referral-capture.spec.ts
+
+[30] REQ-522: referral capture with same code is idempotent (200)
+    Status: ✓ PASSED
+    Duration: 430ms
+    REQs: REQ-520, REQ-522
+    Suite: /Users/sahcihansahin/Trader/empire-testkit/tests/referral-capture.spec.ts
+
+[31] REQ-523: referral capture with missing wallet returns 400
+    Status: ✓ PASSED
+    Duration: 129ms
+    REQs: REQ-520, REQ-523
+    Suite: /Users/sahcihansahin/Trader/empire-testkit/tests/referral-capture.spec.ts
+
+[32] REQ-524: referral capture with non-existent wallet returns 404
+    Status: ✓ PASSED
+    Duration: 211ms
+    REQs: REQ-520, REQ-524
+    Suite: /Users/sahcihansahin/Trader/empire-testkit/tests/referral-capture.spec.ts
+
+[33] REQ-160/145: sign claim returns signature and halving multiplier
+    Status: ✓ PASSED
+    Duration: 226ms
+    REQs: REQ-160, REQ-160
+    Suite: /Users/sahcihansahin/Trader/empire-testkit/tests/sign-claim.spec.ts
+
+[34] REQ-TRAIN-001a: enforces level cap (max 3)
+    Status: ✓ PASSED
+    Duration: 459ms
+    REQs: none
+    Suite: /Users/sahcihansahin/Trader/empire-testkit/tests/train-recycle.spec.ts
+
+[35] REQ-TRAIN-001b: costs 50 $OIL per level
+    Status: ✓ PASSED
+    Duration: 411ms
+    REQs: none
+    Suite: /Users/sahcihansahin/Trader/empire-testkit/tests/train-recycle.spec.ts
+
+[36] REQ-RECYCLE-001a: cannot recycle godspeed tier
+    Status: ✓ PASSED
+    Duration: 1ms
+    REQs: none
+    Suite: /Users/sahcihansahin/Trader/empire-testkit/tests/train-recycle.spec.ts
+
+[37] REQ-RECYCLE-001b: returns promote or burn result
+    Status: ✓ PASSED
+    Duration: 271ms
+    REQs: none
+    Suite: /Users/sahcihansahin/Trader/empire-testkit/tests/train-recycle.spec.ts
+
+[38] REQ-330/315/318: training upgrades level only (1→3), never tier, with correct cost curve
+    Status: ✓ PASSED
+    Duration: 506ms
+    REQs: REQ-330, REQ-330
+    Suite: /Users/sahcihansahin/Trader/empire-testkit/tests/train-unit.spec.ts
+
+[39] REQ-331: training cannot exceed level 3
+    Status: ✓ PASSED
+    Duration: 141ms
+    REQs: REQ-330, REQ-331
+    Suite: /Users/sahcihansahin/Trader/empire-testkit/tests/train-unit.spec.ts
+
+[40] REQ-332: training cost curve verification
+    Status: ✓ PASSED
+    Duration: 125ms
+    REQs: REQ-330, REQ-332
+    Suite: /Users/sahcihansahin/Trader/empire-testkit/tests/train-unit.spec.ts
+
+[41] REQ-UPGRADE-001a: rejects when insufficient $OIL
+    Status: ✓ PASSED
+    Duration: 888ms
+    REQs: none
+    Suite: /Users/sahcihansahin/Trader/empire-testkit/tests/upgrade-garage.spec.ts
+
+[42] REQ-UPGRADE-001b: verifies upgrade costs match garage levels
+    Status: ✓ PASSED
+    Duration: 0ms
+    REQs: none
+    Suite: /Users/sahcihansahin/Trader/empire-testkit/tests/upgrade-garage.spec.ts
+
+[43] REQ-UPGRADE-001c: upgrade increases capacity and daily pack limit
+    Status: ✓ PASSED
+    Duration: 0ms
+    REQs: none
+    Suite: /Users/sahcihansahin/Trader/empire-testkit/tests/upgrade-garage.spec.ts
+
+[44] REQ-UPGRADE-001d: validates 24h cooldown concept
+    Status: ✓ PASSED
+    Duration: 1ms
+    REQs: none
+    Suite: /Users/sahcihansahin/Trader/empire-testkit/tests/upgrade-garage.spec.ts
+
+[45] REQ-UPGRADE-001e: validates progression path L1→L10
+    Status: ✓ PASSED
+    Duration: 0ms
+    REQs: none
+    Suite: /Users/sahcihansahin/Trader/empire-testkit/tests/upgrade-garage.spec.ts
+
+[46] REQ-UPGRADE-001f: max level is L10
+    Status: ✓ PASSED
+    Duration: 0ms
+    REQs: none
+    Suite: /Users/sahcihansahin/Trader/empire-testkit/tests/upgrade-garage.spec.ts
+
+ALL API CALLS
+-------------
+
+[1] POST sign-claim → 200 (349ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/sign-claim
+    Time: 10/16/2025, 9:06:17 PM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","amount":1.23,"seasonId":null}
+    Response: {"ok":true,"sig":"0BOiLLkL7xHwzAnwAnWC+cCT3r7+gwJL7HHQB3kGlyc=","multiplier":1}
+
+
+[2] POST open-pack → 400 (425ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/open-pack
+    Time: 10/16/2025, 9:06:17 PM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","packType":"common","qty":1}
+    Response: {"error":"packTypeId and walletAddress required"}
+
+
+[3] POST train-unit → 404 (515ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/train-unit
+    Time: 10/16/2025, 9:06:17 PM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","unitId":"00000000-0000-0000-0000-000000000000","levels":1}
+    Response: {"error":"Unit not found or not owned by user"}
+
+
+[4] GET list-seasons → 200 (451ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/list-seasons
+    Time: 10/16/2025, 9:06:17 PM
+    Request: null
+    Response: {"ok":true,"seasons":[{"id":"bee531ed-bb94-4a76-ba20-7fc351d3e7d8","name":"Season 1","base_rate_per_min":100,"halving_days":7,"starts_at":"2025-10-14T19:30:49.382896+00:00","ends_at":"2025-11-13T19:30:49.382896+00:00","start_at":"2025-10-14T23:01:15.614349+00:00","end_at":null,"emission_per_hour":100,"burn_pct":0.1,"is_active":true}]}
+
+
+[5] POST toggle-season → 404 (74ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/toggle-season
+    Time: 10/16/2025, 9:06:17 PM
+    Request: null
+    Response: {"code":"NOT_FOUND","message":"Requested function was not found"}
+
+
+[6] POST referral-capture → 404 (548ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/referral-capture
+    Time: 10/16/2025, 9:06:17 PM
+    Request: {"wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","code":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9"}
+    Response: {"ok":false,"error":"profile not found"}
+
+
+[7] GET economy-stats → 200 (564ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/economy-stats
+    Time: 10/16/2025, 9:06:17 PM
+    Request: null
+    Response: {"ok":true,"season":{"name":"Season 1"},"totals":{"claimed":3987.499999,"spent":275,"burned":27.5},"ledger":[{"ts":"2025-10-17T00:47:52.320127+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"claim","amount":21.666666666666668,"reason":""},{"ts":"2025-10-17T00:34:24.728449+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"claim","amount":168.33333333333334,"reason":""},{"ts":"2025-10-16T22:52:42.980227+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"claim","amount":16.666666666666668,"reason":""},{"ts":"2025-10-16T22:41:52.611721+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"claim","amount":10.833333,"reason":""},{"ts":"2025-10-16T22:28:28.619675+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"claim","amount":70.833333,"reason":""},{"ts":"2025-10-16T21:03:05.596834+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"claim","amount":5,"reason":""},{"ts":"2025-10-16T20:56:19.041531+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"claim","amount":985.833333,"reason":""},{"ts":"2025-10-16T01:12:53.393964+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"claim","amount":10,"reason":""},{"ts":"2025-10-16T01:06:03.347636+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"claim","amount":2270,"reason":""},{"ts":"2025-10-15T02:23:41.112884+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"claim","amount":281.6666666666667,"reason":""},{"ts":"2025-10-15T01:20:06.111876+00:00","wallet":"7AKx7ybM2A7ed6SDNw9ZW2hDHaypr1iABvZ38oEGd1zm","kind":"burn","amount":7.5,"reason":"train"},{"ts":"2025-10-15T01:20:06.111876+00:00","wallet":"7AKx7ybM2A7ed6SDNw9ZW2hDHaypr1iABvZ38oEGd1zm","kind":"spend","amount":75,"reason":"train"},{"ts":"2025-10-15T01:19:36.4641+00:00","wallet":"7AKx7ybM2A7ed6SDNw9ZW2hDHaypr1iABvZ38oEGd1zm","kind":"burn","amount":10,"reason":"open-pack"},{"ts":"2025-10-15T01:19:36.4641+00:00","wallet":"7AKx7ybM2A7ed6SDNw9ZW2hDHaypr1iABvZ38oEGd1zm","kind":"spend","amount":100,"reason":"open-pack"},{"ts":"2025-10-14T23:34:47.830269+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"spend","amount":100,"reason":"open-pack"},{"ts":"2025-10-14T23:34:47.830269+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"burn","amount":10,"reason":"open-pack"},{"ts":"2025-10-14T23:34:38.948577+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"claim","amount":46.66666666666667,"reason":""},{"ts":"2025-10-14T23:06:22.468026+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"claim","amount":100,"reason":""}]}
+
+
+[8] POST claim-rewards → 400 (354ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/claim-rewards
+    Time: 10/16/2025, 9:06:17 PM
+    Request: {}
+    Response: {"error":"walletAddress required"}
+
+
+[9] POST claim-rewards → 200 (526ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/claim-rewards
+    Time: 10/16/2025, 9:06:17 PM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9"}
+    Response: {"ok":true,"amount":26.666666666666668,"userMp":10,"totalMp":10,"minutes":16,"season":{"id":"bee531ed-bb94-4a76-ba20-7fc351d3e7d8","name":"Season 1","basePerHour":100}}
+
+
+[10] POST claim-rewards → 200 (424ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/claim-rewards
+    Time: 10/16/2025, 9:06:18 PM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9"}
+    Response: {"ok":true,"amount":0,"userMp":10,"totalMp":10,"minutes":0,"season":{"id":"bee531ed-bb94-4a76-ba20-7fc351d3e7d8","name":"Season 1","basePerHour":100}}
+
+
+[11] POST claim-rewards → 200 (635ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/claim-rewards
+    Time: 10/16/2025, 9:06:18 PM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9"}
+    Response: {"ok":true,"amount":0,"userMp":10,"totalMp":10,"minutes":0,"season":{"id":"bee531ed-bb94-4a76-ba20-7fc351d3e7d8","name":"Season 1","basePerHour":100}}
+
+
+[12] POST sign-claim → 200 (416ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/sign-claim
+    Time: 10/18/2025, 12:55:21 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","amount":1.23,"seasonId":null}
+    Response: {"ok":true,"sig":"0BOiLLkL7xHwzAnwAnWC+cCT3r7+gwJL7HHQB3kGlyc=","multiplier":1}
+
+
+[13] POST open-pack → 404 (641ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/open-pack
+    Time: 10/18/2025, 12:55:21 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","packType":"common","qty":1}
+    Response: {"ok":false,"error":"profile not found"}
+
+
+[14] GET list-seasons → 200 (610ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/list-seasons
+    Time: 10/18/2025, 12:55:21 AM
+    Request: null
+    Response: {"ok":true,"seasons":[{"id":"bee531ed-bb94-4a76-ba20-7fc351d3e7d8","name":"Season 1","base_rate_per_min":100,"halving_days":7,"starts_at":"2025-10-14T19:30:49.382896+00:00","ends_at":"2025-11-13T19:30:49.382896+00:00","start_at":"2025-10-14T23:01:15.614349+00:00","end_at":null,"emission_per_hour":100,"burn_pct":0.1,"is_active":true}]}
+
+
+[15] POST toggle-season → 404 (63ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/toggle-season
+    Time: 10/18/2025, 12:55:21 AM
+    Request: null
+    Response: {"code":"NOT_FOUND","message":"Requested function was not found"}
+
+
+[16] GET economy-stats → 200 (800ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/economy-stats
+    Time: 10/18/2025, 12:55:21 AM
+    Request: null
+    Response: {"ok":true,"season":{"name":"Season 1"},"totals":{"claimed":4014.1666656666666,"spent":275,"burned":27.5},"ledger":[{"ts":"2025-10-17T01:06:17.603459+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"claim","amount":26.666666666666668,"reason":""},{"ts":"2025-10-17T00:47:52.320127+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"claim","amount":21.666666666666668,"reason":""},{"ts":"2025-10-17T00:34:24.728449+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"claim","amount":168.33333333333334,"reason":""},{"ts":"2025-10-16T22:52:42.980227+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"claim","amount":16.666666666666668,"reason":""},{"ts":"2025-10-16T22:41:52.611721+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"claim","amount":10.833333,"reason":""},{"ts":"2025-10-16T22:28:28.619675+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"claim","amount":70.833333,"reason":""},{"ts":"2025-10-16T21:03:05.596834+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"claim","amount":5,"reason":""},{"ts":"2025-10-16T20:56:19.041531+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"claim","amount":985.833333,"reason":""},{"ts":"2025-10-16T01:12:53.393964+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"claim","amount":10,"reason":""},{"ts":"2025-10-16T01:06:03.347636+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"claim","amount":2270,"reason":""},{"ts":"2025-10-15T02:23:41.112884+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"claim","amount":281.6666666666667,"reason":""},{"ts":"2025-10-15T01:20:06.111876+00:00","wallet":"7AKx7ybM2A7ed6SDNw9ZW2hDHaypr1iABvZ38oEGd1zm","kind":"burn","amount":7.5,"reason":"train"},{"ts":"2025-10-15T01:20:06.111876+00:00","wallet":"7AKx7ybM2A7ed6SDNw9ZW2hDHaypr1iABvZ38oEGd1zm","kind":"spend","amount":75,"reason":"train"},{"ts":"2025-10-15T01:19:36.4641+00:00","wallet":"7AKx7ybM2A7ed6SDNw9ZW2hDHaypr1iABvZ38oEGd1zm","kind":"burn","amount":10,"reason":"open-pack"},{"ts":"2025-10-15T01:19:36.4641+00:00","wallet":"7AKx7ybM2A7ed6SDNw9ZW2hDHaypr1iABvZ38oEGd1zm","kind":"spend","amount":100,"reason":"open-pack"},{"ts":"2025-10-14T23:34:47.830269+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"spend","amount":100,"reason":"open-pack"},{"ts":"2025-10-14T23:34:47.830269+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"burn","amount":10,"reason":"open-pack"},{"ts":"2025-10-14T23:34:38.948577+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"claim","amount":46.66666666666667,"reason":""},{"ts":"2025-10-14T23:06:22.468026+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"claim","amount":100,"reason":""}]}
+
+
+[17] POST referral-capture → 404 (301ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 12:55:22 AM
+    Request: {"wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","code":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9"}
+    Response: {"ok":false,"error":"profile not found"}
+
+
+[18] POST train-unit → 404 (647ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/train-unit
+    Time: 10/18/2025, 12:55:21 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","unitId":"00000000-0000-0000-0000-000000000000","levels":1}
+    Response: {"ok":false,"error":"profile not found"}
+
+
+[19] POST train-unit → 404 (253ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/train-unit
+    Time: 10/18/2025, 12:55:22 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","unitId":"00000000-0000-0000-0000-000000000000","levels":10}
+    Response: {"ok":false,"error":"profile not found"}
+
+
+[20] POST recycle-unit → 404 (699ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/recycle-unit
+    Time: 10/18/2025, 12:55:21 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","unitId":"00000000-0000-0000-0000-000000000000"}
+    Response: {"ok":false,"error":"unit not found"}
+
+
+[21] POST recycle-unit → 404 (347ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/recycle-unit
+    Time: 10/18/2025, 12:55:22 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","unitId":"00000000-0000-0000-0000-000000000000"}
+    Response: {"ok":false,"error":"unit not found"}
+
+
+[22] POST recycle-unit → 404 (290ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/recycle-unit
+    Time: 10/18/2025, 12:55:22 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","unitId":"00000000-0000-0000-0000-000000000000"}
+    Response: {"ok":false,"error":"unit not found"}
+
+
+[23] POST claim-rewards → 400 (418ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 12:55:21 AM
+    Request: {}
+    Response: {"error":"walletAddress required"}
+
+
+[24] POST claim-rewards → 200 (622ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 12:55:22 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9"}
+    Response: {"ok":true,"amount":0,"userMp":0,"totalMp":0,"minutes":1669,"season":{"id":"bee531ed-bb94-4a76-ba20-7fc351d3e7d8","name":"Season 1","basePerHour":100}}
+
+
+[25] POST claim-rewards → 200 (396ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 12:55:22 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9"}
+    Response: {"ok":true,"amount":0,"userMp":0,"totalMp":0,"minutes":0,"season":{"id":"bee531ed-bb94-4a76-ba20-7fc351d3e7d8","name":"Season 1","basePerHour":100}}
+
+
+[26] POST claim-rewards → 200 (415ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 12:55:23 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9"}
+    Response: {"ok":true,"amount":0,"userMp":0,"totalMp":0,"minutes":0,"season":{"id":"bee531ed-bb94-4a76-ba20-7fc351d3e7d8","name":"Season 1","basePerHour":100}}
+
+
+[27] POST claim-rewards → 200 (775ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 12:55:23 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9"}
+    Response: {"ok":true,"amount":0,"userMp":0,"totalMp":0,"minutes":0,"season":{"id":"bee531ed-bb94-4a76-ba20-7fc351d3e7d8","name":"Season 1","basePerHour":100}}
+
+
+[28] POST open-pack → 404 (1207ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/open-pack
+    Time: 10/18/2025, 1:09:39 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","packType":"common","qty":1}
+    Response: {"ok":false,"error":"profile not found"}
+
+
+[29] GET list-seasons → 200 (1036ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/list-seasons
+    Time: 10/18/2025, 1:09:39 AM
+    Request: null
+    Response: {"ok":true,"seasons":[{"id":"bee531ed-bb94-4a76-ba20-7fc351d3e7d8","name":"Season 1","base_rate_per_min":100,"halving_days":7,"starts_at":"2025-10-14T19:30:49.382896+00:00","ends_at":"2025-11-13T19:30:49.382896+00:00","start_at":"2025-10-14T23:01:15.614349+00:00","end_at":null,"emission_per_hour":100,"burn_pct":0.1,"is_active":true}]}
+
+
+[30] POST toggle-season → 403 (212ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/toggle-season
+    Time: 10/18/2025, 1:09:39 AM
+    Request: {"seasonId":"00000000-0000-0000-0000-000000000001"}
+    Response: {"ok":false,"error":"forbidden","message":"Admin access required"}
+
+
+[31] GET economy-stats → 200 (1251ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/economy-stats
+    Time: 10/18/2025, 1:09:39 AM
+    Request: null
+    Response: {"ok":true,"season":{"name":"Season 1"},"totals":{"claimed":4014.1666656666666,"spent":275,"burned":27.5},"ledger":[{"ts":"2025-10-17T01:06:17.603459+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"claim","amount":26.666666666666668,"reason":""},{"ts":"2025-10-17T00:47:52.320127+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"claim","amount":21.666666666666668,"reason":""},{"ts":"2025-10-17T00:34:24.728449+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"claim","amount":168.33333333333334,"reason":""},{"ts":"2025-10-16T22:52:42.980227+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"claim","amount":16.666666666666668,"reason":""},{"ts":"2025-10-16T22:41:52.611721+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"claim","amount":10.833333,"reason":""},{"ts":"2025-10-16T22:28:28.619675+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"claim","amount":70.833333,"reason":""},{"ts":"2025-10-16T21:03:05.596834+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"claim","amount":5,"reason":""},{"ts":"2025-10-16T20:56:19.041531+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"claim","amount":985.833333,"reason":""},{"ts":"2025-10-16T01:12:53.393964+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"claim","amount":10,"reason":""},{"ts":"2025-10-16T01:06:03.347636+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"claim","amount":2270,"reason":""},{"ts":"2025-10-15T02:23:41.112884+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"claim","amount":281.6666666666667,"reason":""},{"ts":"2025-10-15T01:20:06.111876+00:00","wallet":"7AKx7ybM2A7ed6SDNw9ZW2hDHaypr1iABvZ38oEGd1zm","kind":"burn","amount":7.5,"reason":"train"},{"ts":"2025-10-15T01:20:06.111876+00:00","wallet":"7AKx7ybM2A7ed6SDNw9ZW2hDHaypr1iABvZ38oEGd1zm","kind":"spend","amount":75,"reason":"train"},{"ts":"2025-10-15T01:19:36.4641+00:00","wallet":"7AKx7ybM2A7ed6SDNw9ZW2hDHaypr1iABvZ38oEGd1zm","kind":"burn","amount":10,"reason":"open-pack"},{"ts":"2025-10-15T01:19:36.4641+00:00","wallet":"7AKx7ybM2A7ed6SDNw9ZW2hDHaypr1iABvZ38oEGd1zm","kind":"spend","amount":100,"reason":"open-pack"},{"ts":"2025-10-14T23:34:47.830269+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"spend","amount":100,"reason":"open-pack"},{"ts":"2025-10-14T23:34:47.830269+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"burn","amount":10,"reason":"open-pack"},{"ts":"2025-10-14T23:34:38.948577+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"claim","amount":46.66666666666667,"reason":""},{"ts":"2025-10-14T23:06:22.468026+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"claim","amount":100,"reason":""}]}
+
+
+[32] POST sign-claim → 200 (323ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/sign-claim
+    Time: 10/18/2025, 1:09:40 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","amount":1.23,"seasonId":null}
+    Response: {"ok":true,"sig":"0BOiLLkL7xHwzAnwAnWC+cCT3r7+gwJL7HHQB3kGlyc=","multiplier":1}
+
+
+[33] POST recycle-unit → 404 (1236ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/recycle-unit
+    Time: 10/18/2025, 1:09:39 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","unitId":"00000000-0000-0000-0000-000000000000"}
+    Response: {"ok":false,"error":"unit not found"}
+
+
+[34] POST recycle-unit → 404 (297ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/recycle-unit
+    Time: 10/18/2025, 1:09:39 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","unitId":"00000000-0000-0000-0000-000000000000"}
+    Response: {"ok":false,"error":"unit not found"}
+
+
+[35] POST recycle-unit → 404 (322ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/recycle-unit
+    Time: 10/18/2025, 1:09:40 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","unitId":"00000000-0000-0000-0000-000000000000"}
+    Response: {"ok":false,"error":"unit not found"}
+
+
+[36] POST open-pack → 404 (1200ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/open-pack
+    Time: 10/18/2025, 1:09:39 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","packType":"common","qty":1}
+    Response: {"ok":false,"error":"profile not found"}
+
+
+[37] POST train-unit → 404 (251ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/train-unit
+    Time: 10/18/2025, 1:09:39 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","unitId":"00000000-0000-0000-0000-000000000000","levels":1}
+    Response: {"ok":false,"error":"profile not found"}
+
+
+[38] POST train-unit → 404 (322ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/train-unit
+    Time: 10/18/2025, 1:09:40 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","unitId":"00000000-0000-0000-0000-000000000000","levels":10}
+    Response: {"ok":false,"error":"profile not found"}
+
+
+[39] POST train-unit → 404 (255ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/train-unit
+    Time: 10/18/2025, 1:09:40 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","unitId":"00000000-0000-0000-0000-000000000000","levels":2}
+    Response: {"ok":false,"error":"profile not found"}
+
+
+[40] POST claim-rewards → 200 (1387ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 1:09:39 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9"}
+    Response: {"ok":true,"amount":0,"userMp":0,"totalMp":0,"minutes":14,"season":{"id":"bee531ed-bb94-4a76-ba20-7fc351d3e7d8","name":"Season 1","basePerHour":100}}
+
+
+[41] POST referral-capture → 404 (218ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 1:09:39 AM
+    Request: {"wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","code":"ref_1760764179709"}
+    Response: {"ok":false,"error":"profile not found"}
+
+
+[42] POST referral-capture → 404 (265ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 1:09:40 AM
+    Request: {"wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","code":"ref_first_1760764179932"}
+    Response: {"ok":false,"error":"profile not found"}
+
+
+[43] POST referral-capture → 404 (207ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 1:09:40 AM
+    Request: {"wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","code":"ref_idempotent_1760764180198"}
+    Response: {"ok":false,"error":"profile not found"}
+
+
+[44] POST referral-capture → 400 (140ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 1:09:40 AM
+    Request: {"code":"some-code"}
+    Response: {"ok":false,"error":"wallet and code required"}
+
+
+[45] POST referral-capture → 404 (199ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 1:09:40 AM
+    Request: {"wallet":"99NonExistentWallet99999999999999999999999","code":"some-code"}
+    Response: {"ok":false,"error":"profile not found"}
+
+
+[46] POST claim-rewards → 400 (730ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 1:09:39 AM
+    Request: {}
+    Response: {"error":"walletAddress required"}
+
+
+[47] POST claim-rewards → 200 (634ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 1:09:39 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9"}
+    Response: {"ok":true,"amount":0,"userMp":0,"totalMp":0,"minutes":14,"season":{"id":"bee531ed-bb94-4a76-ba20-7fc351d3e7d8","name":"Season 1","basePerHour":100}}
+
+
+[48] POST claim-rewards → 200 (356ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 1:09:40 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9"}
+    Response: {"ok":true,"amount":0,"userMp":0,"totalMp":0,"minutes":0,"season":{"id":"bee531ed-bb94-4a76-ba20-7fc351d3e7d8","name":"Season 1","basePerHour":100}}
+
+
+[49] POST claim-rewards → 200 (398ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 1:09:40 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9"}
+    Response: {"ok":true,"amount":0,"userMp":0,"totalMp":0,"minutes":0,"season":{"id":"bee531ed-bb94-4a76-ba20-7fc351d3e7d8","name":"Season 1","basePerHour":100}}
+
+
+[50] POST claim-rewards → 200 (346ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 1:09:40 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9"}
+    Response: {"ok":true,"amount":0,"userMp":0,"totalMp":0,"minutes":0,"season":{"id":"bee531ed-bb94-4a76-ba20-7fc351d3e7d8","name":"Season 1","basePerHour":100}}
+
+
+[51] POST open-pack → 404 (666ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/open-pack
+    Time: 10/18/2025, 1:10:46 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","packType":"common","qty":1}
+    Response: {"ok":false,"error":"profile not found"}
+
+
+[52] GET economy-stats → 200 (797ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/economy-stats
+    Time: 10/18/2025, 1:10:46 AM
+    Request: null
+    Response: {"ok":true,"season":{"name":"Season 1"},"totals":{"claimed":4014.1666656666666,"spent":275,"burned":27.5},"ledger":[{"ts":"2025-10-17T01:06:17.603459+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"claim","amount":26.666666666666668,"reason":""},{"ts":"2025-10-17T00:47:52.320127+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"claim","amount":21.666666666666668,"reason":""},{"ts":"2025-10-17T00:34:24.728449+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"claim","amount":168.33333333333334,"reason":""},{"ts":"2025-10-16T22:52:42.980227+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"claim","amount":16.666666666666668,"reason":""},{"ts":"2025-10-16T22:41:52.611721+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"claim","amount":10.833333,"reason":""},{"ts":"2025-10-16T22:28:28.619675+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"claim","amount":70.833333,"reason":""},{"ts":"2025-10-16T21:03:05.596834+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"claim","amount":5,"reason":""},{"ts":"2025-10-16T20:56:19.041531+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"claim","amount":985.833333,"reason":""},{"ts":"2025-10-16T01:12:53.393964+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"claim","amount":10,"reason":""},{"ts":"2025-10-16T01:06:03.347636+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"claim","amount":2270,"reason":""},{"ts":"2025-10-15T02:23:41.112884+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"claim","amount":281.6666666666667,"reason":""},{"ts":"2025-10-15T01:20:06.111876+00:00","wallet":"7AKx7ybM2A7ed6SDNw9ZW2hDHaypr1iABvZ38oEGd1zm","kind":"burn","amount":7.5,"reason":"train"},{"ts":"2025-10-15T01:20:06.111876+00:00","wallet":"7AKx7ybM2A7ed6SDNw9ZW2hDHaypr1iABvZ38oEGd1zm","kind":"spend","amount":75,"reason":"train"},{"ts":"2025-10-15T01:19:36.4641+00:00","wallet":"7AKx7ybM2A7ed6SDNw9ZW2hDHaypr1iABvZ38oEGd1zm","kind":"burn","amount":10,"reason":"open-pack"},{"ts":"2025-10-15T01:19:36.4641+00:00","wallet":"7AKx7ybM2A7ed6SDNw9ZW2hDHaypr1iABvZ38oEGd1zm","kind":"spend","amount":100,"reason":"open-pack"},{"ts":"2025-10-14T23:34:47.830269+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"spend","amount":100,"reason":"open-pack"},{"ts":"2025-10-14T23:34:47.830269+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"burn","amount":10,"reason":"open-pack"},{"ts":"2025-10-14T23:34:38.948577+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"claim","amount":46.66666666666667,"reason":""},{"ts":"2025-10-14T23:06:22.468026+00:00","wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","kind":"claim","amount":100,"reason":""}]}
+
+
+[53] GET list-seasons → 200 (678ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/list-seasons
+    Time: 10/18/2025, 1:10:46 AM
+    Request: null
+    Response: {"ok":true,"seasons":[{"id":"bee531ed-bb94-4a76-ba20-7fc351d3e7d8","name":"Season 1","base_rate_per_min":100,"halving_days":7,"starts_at":"2025-10-14T19:30:49.382896+00:00","ends_at":"2025-11-13T19:30:49.382896+00:00","start_at":"2025-10-14T23:01:15.614349+00:00","end_at":null,"emission_per_hour":100,"burn_pct":0.1,"is_active":true}]}
+
+
+[54] POST toggle-season → 403 (163ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/toggle-season
+    Time: 10/18/2025, 1:10:46 AM
+    Request: {"seasonId":"00000000-0000-0000-0000-000000000001"}
+    Response: {"ok":false,"error":"forbidden","message":"Admin access required"}
+
+
+[55] POST sign-claim → 200 (274ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/sign-claim
+    Time: 10/18/2025, 1:10:46 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","amount":1.23,"seasonId":null}
+    Response: {"ok":true,"sig":"0BOiLLkL7xHwzAnwAnWC+cCT3r7+gwJL7HHQB3kGlyc=","multiplier":1}
+
+
+[56] POST recycle-unit → 404 (757ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/recycle-unit
+    Time: 10/18/2025, 1:10:46 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","unitId":"00000000-0000-0000-0000-000000000000"}
+    Response: {"ok":false,"error":"unit not found"}
+
+
+[57] POST recycle-unit → 404 (313ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/recycle-unit
+    Time: 10/18/2025, 1:10:46 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","unitId":"00000000-0000-0000-0000-000000000000"}
+    Response: {"ok":false,"error":"unit not found"}
+
+
+[58] POST recycle-unit → 404 (283ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/recycle-unit
+    Time: 10/18/2025, 1:10:47 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","unitId":"00000000-0000-0000-0000-000000000000"}
+    Response: {"ok":false,"error":"unit not found"}
+
+
+[59] POST open-pack → 404 (749ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/open-pack
+    Time: 10/18/2025, 1:10:46 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","packType":"common","qty":1}
+    Response: {"ok":false,"error":"profile not found"}
+
+
+[60] POST train-unit → 404 (250ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/train-unit
+    Time: 10/18/2025, 1:10:46 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","unitId":"00000000-0000-0000-0000-000000000000","levels":1}
+    Response: {"ok":false,"error":"profile not found"}
+
+
+[61] POST train-unit → 404 (221ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/train-unit
+    Time: 10/18/2025, 1:10:47 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","unitId":"00000000-0000-0000-0000-000000000000","levels":10}
+    Response: {"ok":false,"error":"profile not found"}
+
+
+[62] POST train-unit → 404 (296ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/train-unit
+    Time: 10/18/2025, 1:10:47 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","unitId":"00000000-0000-0000-0000-000000000000","levels":2}
+    Response: {"ok":false,"error":"profile not found"}
+
+
+[63] POST claim-rewards → 400 (538ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 1:10:46 AM
+    Request: {}
+    Response: {"error":"walletAddress required"}
+
+
+[64] POST claim-rewards → 200 (389ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 1:10:46 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9"}
+    Response: {"ok":true,"amount":0,"userMp":0,"totalMp":0,"minutes":1,"season":{"id":"bee531ed-bb94-4a76-ba20-7fc351d3e7d8","name":"Season 1","basePerHour":100}}
+
+
+[65] POST claim-rewards → 200 (393ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 1:10:47 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9"}
+    Response: {"ok":true,"amount":0,"userMp":0,"totalMp":0,"minutes":0,"season":{"id":"bee531ed-bb94-4a76-ba20-7fc351d3e7d8","name":"Season 1","basePerHour":100}}
+
+
+[66] POST claim-rewards → 200 (368ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 1:10:47 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9"}
+    Response: {"ok":true,"amount":0,"userMp":0,"totalMp":0,"minutes":0,"season":{"id":"bee531ed-bb94-4a76-ba20-7fc351d3e7d8","name":"Season 1","basePerHour":100}}
+
+
+[67] POST claim-rewards → 200 (351ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 1:10:47 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9"}
+    Response: {"ok":true,"amount":0,"userMp":0,"totalMp":0,"minutes":0,"season":{"id":"bee531ed-bb94-4a76-ba20-7fc351d3e7d8","name":"Season 1","basePerHour":100}}
+
+
+[68] POST claim-rewards → 200 (897ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 1:10:46 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9"}
+    Response: {"ok":true,"amount":0,"userMp":0,"totalMp":0,"minutes":1,"season":{"id":"bee531ed-bb94-4a76-ba20-7fc351d3e7d8","name":"Season 1","basePerHour":100}}
+
+
+[69] POST referral-capture → 404 (179ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 1:10:46 AM
+    Request: {"wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","code":"ref_1760764246681"}
+    Response: {"ok":false,"error":"profile not found"}
+
+
+[70] POST referral-capture → 404 (321ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 1:10:47 AM
+    Request: {"wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","code":"ref_first_1760764246861"}
+    Response: {"ok":false,"error":"profile not found"}
+
+
+[71] POST referral-capture → 404 (201ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 1:10:47 AM
+    Request: {"wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","code":"ref_second_1760764246861"}
+    Response: {"ok":false,"error":"profile not found"}
+
+
+[72] POST referral-capture → 404 (189ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 1:10:47 AM
+    Request: {"wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","code":"ref_idempotent_1760764247383"}
+    Response: {"ok":false,"error":"profile not found"}
+
+
+[73] POST referral-capture → 404 (185ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 1:10:47 AM
+    Request: {"wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","code":"ref_idempotent_1760764247383"}
+    Response: {"ok":false,"error":"profile not found"}
+
+
+[74] POST referral-capture → 400 (181ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 1:10:47 AM
+    Request: {"code":"some-code"}
+    Response: {"ok":false,"error":"wallet and code required"}
+
+
+[75] POST referral-capture → 404 (275ms)
+    URL: https://miflbztkdctpibawermj.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 1:10:48 AM
+    Request: {"wallet":"99NonExistentWallet99999999999999999999999","code":"some-code"}
+    Response: {"ok":false,"error":"profile not found"}
+
+
+[76] POST open-pack → 404 (613ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/open-pack
+    Time: 10/18/2025, 3:37:38 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","packType":"common","qty":1}
+    Response: {"ok":false,"error":"profile not found"}
+
+
+[77] GET economy-stats → 200 (636ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/economy-stats
+    Time: 10/18/2025, 3:37:38 AM
+    Request: null
+    Response: {"ok":true,"totals":{"bonds_minted":0,"bonds_burned":0,"players":0},"recents":[]}
+
+
+[78] GET list-seasons → 200 (566ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/list-seasons
+    Time: 10/18/2025, 3:37:38 AM
+    Request: null
+    Response: {"ok":true,"seasons":[{"id":1,"name":"Season 1","is_active":true,"emission_per_hour":100,"start_date":null,"end_date":null,"created_at":"2025-10-18T07:34:48.893469+00:00"}]}
+
+
+[79] POST toggle-season → 403 (166ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/toggle-season
+    Time: 10/18/2025, 3:37:38 AM
+    Request: {"seasonId":"00000000-0000-0000-0000-000000000001"}
+    Response: {"ok":false,"error":"forbidden","message":"Admin access required"}
+
+
+[80] POST sign-claim → 200 (229ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/sign-claim
+    Time: 10/18/2025, 3:37:38 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","amount":1.23,"seasonId":null}
+    Response: {"ok":true,"sig":"0BOiLLkL7xHwzAnwAnWC+cCT3r7+gwJL7HHQB3kGlyc=","multiplier":1}
+
+
+[81] POST recycle-unit → 404 (686ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/recycle-unit
+    Time: 10/18/2025, 3:37:38 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","unitId":"00000000-0000-0000-0000-000000000000"}
+    Response: {"ok":false,"error":"profile not found"}
+
+
+[82] POST recycle-unit → 404 (273ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/recycle-unit
+    Time: 10/18/2025, 3:37:38 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","unitId":"00000000-0000-0000-0000-000000000000"}
+    Response: {"ok":false,"error":"profile not found"}
+
+
+[83] POST recycle-unit → 404 (306ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/recycle-unit
+    Time: 10/18/2025, 3:37:38 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","unitId":"00000000-0000-0000-0000-000000000000"}
+    Response: {"ok":false,"error":"profile not found"}
+
+
+[84] POST open-pack → 404 (607ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/open-pack
+    Time: 10/18/2025, 3:37:38 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","packType":"common","qty":1}
+    Response: {"ok":false,"error":"profile not found"}
+
+
+[85] POST train-unit → 404 (284ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/train-unit
+    Time: 10/18/2025, 3:37:38 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","unitId":"00000000-0000-0000-0000-000000000000","levels":1}
+    Response: {"ok":false,"error":"profile not found"}
+
+
+[86] POST train-unit → 404 (266ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/train-unit
+    Time: 10/18/2025, 3:37:38 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","unitId":"00000000-0000-0000-0000-000000000000","levels":10}
+    Response: {"ok":false,"error":"profile not found"}
+
+
+[87] POST train-unit → 404 (479ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/train-unit
+    Time: 10/18/2025, 3:37:39 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","unitId":"00000000-0000-0000-0000-000000000000","levels":2}
+    Response: {"ok":false,"error":"profile not found"}
+
+
+[88] POST claim-rewards → 400 (442ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 3:37:37 AM
+    Request: {}
+    Response: {"error":"walletAddress required"}
+
+
+[89] POST claim-rewards → 404 (312ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 3:37:38 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9"}
+    Response: {"error":"profile not found"}
+
+
+[90] POST claim-rewards → 404 (239ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 3:37:38 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9"}
+    Response: {"error":"profile not found"}
+
+
+[91] POST claim-rewards → 404 (260ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 3:37:38 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9"}
+    Response: {"error":"profile not found"}
+
+
+[92] POST claim-rewards → 404 (446ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 3:37:39 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9"}
+    Response: {"error":"profile not found"}
+
+
+[93] POST claim-rewards → 404 (604ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 3:37:38 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9"}
+    Response: {"error":"profile not found"}
+
+
+[94] POST referral-capture → 404 (202ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 3:37:38 AM
+    Request: {"wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","code":"ref_1760773058060"}
+    Response: {"ok":false,"error":"profile not found"}
+
+
+[95] POST referral-capture → 404 (209ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 3:37:38 AM
+    Request: {"wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","code":"ref_first_1760773058263"}
+    Response: {"ok":false,"error":"profile not found"}
+
+
+[96] POST referral-capture → 404 (219ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 3:37:38 AM
+    Request: {"wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","code":"ref_second_1760773058263"}
+    Response: {"ok":false,"error":"profile not found"}
+
+
+[97] POST referral-capture → 404 (425ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 3:37:39 AM
+    Request: {"wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","code":"ref_idempotent_1760773058691"}
+    Response: {"ok":false,"error":"profile not found"}
+
+
+[98] POST referral-capture → 404 (222ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 3:37:39 AM
+    Request: {"wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","code":"ref_idempotent_1760773058691"}
+    Response: {"ok":false,"error":"profile not found"}
+
+
+[99] POST referral-capture → 400 (138ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 3:37:39 AM
+    Request: {"code":"some-code"}
+    Response: {"ok":false,"error":"wallet and code required"}
+
+
+[100] POST referral-capture → 404 (271ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 3:37:39 AM
+    Request: {"wallet":"99NonExistentWallet99999999999999999999999","code":"some-code"}
+    Response: {"ok":false,"error":"profile not found"}
+
+
+[101] POST claim-rewards → 400 (342ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 3:38:21 AM
+    Request: {}
+    Response: {"error":"walletAddress required"}
+
+
+[102] POST claim-rewards → 200 (535ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 3:38:22 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9"}
+    Response: {"ok":true,"amount":0,"userMp":0,"totalMp":0,"minutes":60,"season":{"id":1,"name":"Season 1","basePerHour":100}}
+
+
+[103] POST claim-rewards → 200 (504ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 3:38:22 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9"}
+    Response: {"ok":true,"amount":0,"userMp":0,"totalMp":0,"minutes":60,"season":{"id":1,"name":"Season 1","basePerHour":100}}
+
+
+[104] POST claim-rewards → 200 (507ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 3:38:23 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9"}
+    Response: {"ok":true,"amount":0,"userMp":0,"totalMp":0,"minutes":60,"season":{"id":1,"name":"Season 1","basePerHour":100}}
+
+
+[105] POST claim-rewards → 200 (19122ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 3:38:42 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9"}
+    Response: {"ok":true,"amount":0,"userMp":0,"totalMp":0,"minutes":60,"season":{"id":1,"name":"Season 1","basePerHour":100}}
+
+
+[106] GET economy-stats → 200 (905ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/economy-stats
+    Time: 10/18/2025, 3:38:52 AM
+    Request: null
+    Response: {"ok":true,"totals":{"bonds_minted":0,"bonds_burned":0,"players":0},"recents":[]}
+
+
+[107] POST open-pack → 404 (897ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/open-pack
+    Time: 10/18/2025, 3:38:52 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","packType":"common","qty":1}
+    Response: {"ok":false,"error":"unknown pack"}
+
+
+[108] GET list-seasons → 200 (761ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/list-seasons
+    Time: 10/18/2025, 3:38:52 AM
+    Request: null
+    Response: {"ok":true,"seasons":[{"id":1,"name":"Season 1","is_active":true,"emission_per_hour":100,"start_date":null,"end_date":null,"created_at":"2025-10-18T07:34:48.893469+00:00"}]}
+
+
+[109] POST toggle-season → 403 (338ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/toggle-season
+    Time: 10/18/2025, 3:38:52 AM
+    Request: {"seasonId":"00000000-0000-0000-0000-000000000001"}
+    Response: {"ok":false,"error":"forbidden","message":"Admin access required"}
+
+
+[110] POST sign-claim → 200 (291ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/sign-claim
+    Time: 10/18/2025, 3:38:52 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","amount":1.23,"seasonId":null}
+    Response: {"ok":true,"sig":"0BOiLLkL7xHwzAnwAnWC+cCT3r7+gwJL7HHQB3kGlyc=","multiplier":1}
+
+
+[111] POST recycle-unit → 404 (897ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/recycle-unit
+    Time: 10/18/2025, 3:38:52 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","unitId":"00000000-0000-0000-0000-000000000000"}
+    Response: {"ok":false,"error":"unit not found"}
+
+
+[112] POST recycle-unit → 404 (318ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/recycle-unit
+    Time: 10/18/2025, 3:38:52 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","unitId":"00000000-0000-0000-0000-000000000000"}
+    Response: {"ok":false,"error":"unit not found"}
+
+
+[113] POST recycle-unit → 404 (283ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/recycle-unit
+    Time: 10/18/2025, 3:38:52 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","unitId":"00000000-0000-0000-0000-000000000000"}
+    Response: {"ok":false,"error":"unit not found"}
+
+
+[114] POST open-pack → 404 (879ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/open-pack
+    Time: 10/18/2025, 3:38:52 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","packType":"common","qty":1}
+    Response: {"ok":false,"error":"unknown pack"}
+
+
+[115] POST train-unit → 404 (292ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/train-unit
+    Time: 10/18/2025, 3:38:52 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","unitId":"00000000-0000-0000-0000-000000000000","levels":1}
+    Response: {"ok":false,"error":"unit not found"}
+
+
+[116] POST train-unit → 404 (285ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/train-unit
+    Time: 10/18/2025, 3:38:52 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","unitId":"00000000-0000-0000-0000-000000000000","levels":10}
+    Response: {"ok":false,"error":"unit not found"}
+
+
+[117] POST train-unit → 404 (292ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/train-unit
+    Time: 10/18/2025, 3:38:53 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","unitId":"00000000-0000-0000-0000-000000000000","levels":2}
+    Response: {"ok":false,"error":"unit not found"}
+
+
+[118] POST claim-rewards → 200 (1156ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 3:38:52 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9"}
+    Response: {"ok":true,"amount":0,"userMp":0,"totalMp":0,"minutes":60,"season":{"id":1,"name":"Season 1","basePerHour":100}}
+
+
+[119] POST referral-capture → 200 (253ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 3:38:52 AM
+    Request: {"wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","code":"ref_1760773132457"}
+    Response: {"ok":true,"message":"referrer set successfully"}
+
+
+[120] POST referral-capture → 409 (238ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 3:38:52 AM
+    Request: {"wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","code":"ref_first_1760773132711"}
+    Response: {"ok":false,"error":"duplicate","message":"Referrer already set, cannot change"}
+
+
+[121] POST referral-capture → 409 (200ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 3:38:53 AM
+    Request: {"wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","code":"ref_second_1760773132711"}
+    Response: {"ok":false,"error":"duplicate","message":"Referrer already set, cannot change"}
+
+
+[122] POST referral-capture → 409 (207ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 3:38:53 AM
+    Request: {"wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","code":"ref_idempotent_1760773133149"}
+    Response: {"ok":false,"error":"duplicate","message":"Referrer already set, cannot change"}
+
+
+[123] POST referral-capture → 409 (230ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 3:38:53 AM
+    Request: {"wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","code":"ref_idempotent_1760773133149"}
+    Response: {"ok":false,"error":"duplicate","message":"Referrer already set, cannot change"}
+
+
+[124] POST referral-capture → 400 (138ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 3:38:53 AM
+    Request: {"code":"some-code"}
+    Response: {"ok":false,"error":"wallet and code required"}
+
+
+[125] POST referral-capture → 404 (112ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 3:38:53 AM
+    Request: {"wallet":"99NonExistentWallet99999999999999999999999","code":"some-code"}
+    Response: {"ok":false,"error":"profile not found"}
+
+
+[126] POST claim-rewards → 400 (744ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 3:38:52 AM
+    Request: {}
+    Response: {"error":"walletAddress required"}
+
+
+[127] POST claim-rewards → 200 (531ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 3:38:52 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9"}
+    Response: {"ok":true,"amount":0,"userMp":0,"totalMp":0,"minutes":60,"season":{"id":1,"name":"Season 1","basePerHour":100}}
+
+
+[128] POST claim-rewards → 200 (607ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 3:38:53 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9"}
+    Response: {"ok":true,"amount":0,"userMp":0,"totalMp":0,"minutes":60,"season":{"id":1,"name":"Season 1","basePerHour":100}}
+
+
+[129] POST claim-rewards → 200 (531ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 3:38:53 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9"}
+    Response: {"ok":true,"amount":0,"userMp":0,"totalMp":0,"minutes":60,"season":{"id":1,"name":"Season 1","basePerHour":100}}
+
+
+[130] POST claim-rewards → 200 (643ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 3:38:54 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9"}
+    Response: {"ok":true,"amount":0,"userMp":0,"totalMp":0,"minutes":60,"season":{"id":1,"name":"Season 1","basePerHour":100}}
+
+
+[131] POST claim-rewards → 200 (880ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 3:44:12 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9"}
+    Response: {"ok":true,"amount":0,"userMp":0,"totalMp":0,"minutes":60,"season":{"id":1,"name":"Season 1","basePerHour":100}}
+
+
+[132] POST referral-capture → 409 (447ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 3:44:13 AM
+    Request: {"wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","code":"ref_1760773452791"}
+    Response: {"ok":false,"error":"duplicate","message":"Referrer already set, cannot change"}
+
+
+[133] POST referral-capture → 409 (201ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 3:44:13 AM
+    Request: {"wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","code":"ref_first_1760773453241"}
+    Response: {"ok":false,"error":"duplicate","message":"Referrer already set, cannot change"}
+
+
+[134] POST referral-capture → 409 (240ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 3:44:13 AM
+    Request: {"wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","code":"ref_second_1760773453241"}
+    Response: {"ok":false,"error":"duplicate","message":"Referrer already set, cannot change"}
+
+
+[135] POST referral-capture → 409 (276ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 3:44:13 AM
+    Request: {"wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","code":"ref_idempotent_1760773453683"}
+    Response: {"ok":false,"error":"duplicate","message":"Referrer already set, cannot change"}
+
+
+[136] POST referral-capture → 409 (200ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 3:44:14 AM
+    Request: {"wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","code":"ref_idempotent_1760773453683"}
+    Response: {"ok":false,"error":"duplicate","message":"Referrer already set, cannot change"}
+
+
+[137] POST referral-capture → 400 (146ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 3:44:14 AM
+    Request: {"code":"some-code"}
+    Response: {"ok":false,"error":"wallet and code required"}
+
+
+[138] POST referral-capture → 404 (196ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 3:44:14 AM
+    Request: {"wallet":"99NonExistentWallet99999999999999999999999","code":"some-code"}
+    Response: {"ok":false,"error":"profile not found"}
+
+
+[139] GET economy-stats → 200 (453ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/economy-stats
+    Time: 10/18/2025, 3:44:23 AM
+    Request: null
+    Response: {"ok":true,"totals":{"bonds_minted":0,"bonds_burned":0,"players":0},"recents":[]}
+
+
+[140] POST open-pack → 404 (521ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/open-pack
+    Time: 10/18/2025, 3:44:23 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","packType":"common","qty":1}
+    Response: {"ok":false,"error":"unknown pack"}
+
+
+[141] GET list-seasons → 200 (522ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/list-seasons
+    Time: 10/18/2025, 3:44:23 AM
+    Request: null
+    Response: {"ok":true,"seasons":[{"id":1,"name":"Season 1","is_active":true,"emission_per_hour":100,"start_date":null,"end_date":null,"created_at":"2025-10-18T07:34:48.893469+00:00"}]}
+
+
+[142] POST toggle-season → 403 (162ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/toggle-season
+    Time: 10/18/2025, 3:44:23 AM
+    Request: {"seasonId":"00000000-0000-0000-0000-000000000001"}
+    Response: {"ok":false,"error":"forbidden","message":"Admin access required"}
+
+
+[143] POST sign-claim → 200 (300ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/sign-claim
+    Time: 10/18/2025, 3:44:23 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","amount":1.23,"seasonId":null}
+    Response: {"ok":true,"sig":"0BOiLLkL7xHwzAnwAnWC+cCT3r7+gwJL7HHQB3kGlyc=","multiplier":1}
+
+
+[144] POST recycle-unit → 404 (514ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/recycle-unit
+    Time: 10/18/2025, 3:44:23 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","unitId":"00000000-0000-0000-0000-000000000000"}
+    Response: {"ok":false,"error":"unit not found"}
+
+
+[145] POST recycle-unit → 404 (374ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/recycle-unit
+    Time: 10/18/2025, 3:44:23 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","unitId":"00000000-0000-0000-0000-000000000000"}
+    Response: {"ok":false,"error":"unit not found"}
+
+
+[146] POST recycle-unit → 404 (311ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/recycle-unit
+    Time: 10/18/2025, 3:44:24 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","unitId":"00000000-0000-0000-0000-000000000000"}
+    Response: {"ok":false,"error":"unit not found"}
+
+
+[147] POST open-pack → 404 (509ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/open-pack
+    Time: 10/18/2025, 3:44:23 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","packType":"common","qty":1}
+    Response: {"ok":false,"error":"unknown pack"}
+
+
+[148] POST train-unit → 404 (321ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/train-unit
+    Time: 10/18/2025, 3:44:23 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","unitId":"00000000-0000-0000-0000-000000000000","levels":1}
+    Response: {"ok":false,"error":"unit not found"}
+
+
+[149] POST train-unit → 404 (306ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/train-unit
+    Time: 10/18/2025, 3:44:24 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","unitId":"00000000-0000-0000-0000-000000000000","levels":10}
+    Response: {"ok":false,"error":"unit not found"}
+
+
+[150] POST train-unit → 404 (282ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/train-unit
+    Time: 10/18/2025, 3:44:24 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","unitId":"00000000-0000-0000-0000-000000000000","levels":2}
+    Response: {"ok":false,"error":"unit not found"}
+
+
+[151] POST claim-rewards → 200 (901ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 3:44:23 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9"}
+    Response: {"ok":true,"amount":0,"userMp":0,"totalMp":0,"minutes":60,"season":{"id":1,"name":"Season 1","basePerHour":100}}
+
+
+[152] POST referral-capture → 409 (222ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 3:44:24 AM
+    Request: {"wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","code":"ref_1760773463779"}
+    Response: {"ok":false,"error":"duplicate","message":"Referrer already set, cannot change"}
+
+
+[153] POST referral-capture → 409 (196ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 3:44:24 AM
+    Request: {"wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","code":"ref_first_1760773464003"}
+    Response: {"ok":false,"error":"duplicate","message":"Referrer already set, cannot change"}
+
+
+[154] POST referral-capture → 409 (192ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 3:44:24 AM
+    Request: {"wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","code":"ref_second_1760773464003"}
+    Response: {"ok":false,"error":"duplicate","message":"Referrer already set, cannot change"}
+
+
+[155] POST referral-capture → 409 (182ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 3:44:24 AM
+    Request: {"wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","code":"ref_idempotent_1760773464391"}
+    Response: {"ok":false,"error":"duplicate","message":"Referrer already set, cannot change"}
+
+
+[156] POST referral-capture → 409 (278ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 3:44:24 AM
+    Request: {"wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","code":"ref_idempotent_1760773464391"}
+    Response: {"ok":false,"error":"duplicate","message":"Referrer already set, cannot change"}
+
+
+[157] POST referral-capture → 400 (108ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 3:44:24 AM
+    Request: {"code":"some-code"}
+    Response: {"ok":false,"error":"wallet and code required"}
+
+
+[158] POST referral-capture → 404 (212ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 3:44:25 AM
+    Request: {"wallet":"99NonExistentWallet99999999999999999999999","code":"some-code"}
+    Response: {"ok":false,"error":"profile not found"}
+
+
+[159] POST claim-rewards → 400 (341ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 3:44:23 AM
+    Request: {}
+    Response: {"error":"walletAddress required"}
+
+
+[160] POST claim-rewards → 200 (587ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 3:44:23 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9"}
+    Response: {"ok":true,"amount":0,"userMp":0,"totalMp":0,"minutes":60,"season":{"id":1,"name":"Season 1","basePerHour":100}}
+
+
+[161] POST claim-rewards → 200 (499ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 3:44:24 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9"}
+    Response: {"ok":true,"amount":0,"userMp":0,"totalMp":0,"minutes":60,"season":{"id":1,"name":"Season 1","basePerHour":100}}
+
+
+[162] POST claim-rewards → 200 (598ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 3:44:24 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9"}
+    Response: {"ok":true,"amount":0,"userMp":0,"totalMp":0,"minutes":60,"season":{"id":1,"name":"Season 1","basePerHour":100}}
+
+
+[163] POST claim-rewards → 200 (578ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 3:44:25 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9"}
+    Response: {"ok":true,"amount":0,"userMp":0,"totalMp":0,"minutes":60,"season":{"id":1,"name":"Season 1","basePerHour":100}}
+
+
+[164] POST claim-rewards → 400 (377ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 10:00:52 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9"}
+    Response: {"error":"wallet required"}
+
+
+[165] POST referral-capture → 409 (408ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 10:00:52 AM
+    Request: {"wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","code":"ref_1760796052075"}
+    Response: {"ok":false,"error":"duplicate","message":"Referrer already set, cannot change"}
+
+
+[166] POST referral-capture → 409 (275ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 10:00:52 AM
+    Request: {"wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","code":"ref_first_1760796052486"}
+    Response: {"ok":false,"error":"duplicate","message":"Referrer already set, cannot change"}
+
+
+[167] POST referral-capture → 409 (253ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 10:00:53 AM
+    Request: {"wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","code":"ref_second_1760796052486"}
+    Response: {"ok":false,"error":"duplicate","message":"Referrer already set, cannot change"}
+
+
+[168] POST referral-capture → 409 (237ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 10:00:53 AM
+    Request: {"wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","code":"ref_idempotent_1760796053014"}
+    Response: {"ok":false,"error":"duplicate","message":"Referrer already set, cannot change"}
+
+
+[169] POST referral-capture → 409 (117ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 10:00:53 AM
+    Request: {"wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","code":"ref_idempotent_1760796053014"}
+    Response: {"ok":false,"error":"duplicate","message":"Referrer already set, cannot change"}
+
+
+[170] POST referral-capture → 400 (156ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 10:00:53 AM
+    Request: {"code":"some-code"}
+    Response: {"ok":false,"error":"wallet and code required"}
+
+
+[171] POST referral-capture → 404 (239ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 10:00:53 AM
+    Request: {"wallet":"99NonExistentWallet99999999999999999999999","code":"some-code"}
+    Response: {"ok":false,"error":"profile not found"}
+
+
+[172] POST claim-rewards → 404 (776ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 10:25:02 AM
+    Request: {"wallet":"init_test_1760797502089_0yujqrr5n","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"error":"Profile not found"}
+
+
+[173] POST claim-rewards → 404 (240ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 10:25:03 AM
+    Request: {"wallet":"init_idempotent_1760797502871_za48yy29k","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"error":"Profile not found"}
+
+
+[174] POST claim-rewards → 404 (522ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 10:25:03 AM
+    Request: {"wallet":"init_referrer_1760797503113_uu9sp7qtb","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"error":"Profile not found"}
+
+
+[175] POST claim-rewards → 404 (206ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 10:25:03 AM
+    Request: {"wallet":"init_referred_1760797503113_fac8yrzn1","referralCode":"init_referrer_1760797503113_uu9sp7qtb","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"error":"Profile not found"}
+
+
+[176] POST claim-rewards → 404 (216ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 10:25:04 AM
+    Request: {"wallet":"init_invalid_1760797503844_ygt8dmtew","cluster":"devnet","treasurySig":"invalid_sig_not_mock"}
+    Response: {"error":"Profile not found"}
+
+
+[177] POST claim-rewards → 400 (148ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 10:25:04 AM
+    Request: {"cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"error":"wallet required"}
+
+
+[178] POST claim-rewards → 404 (348ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 10:26:08 AM
+    Request: {"wallet":"init_test_1760797568651_v90cpa0k2","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"error":"Profile not found"}
+
+
+[179] POST claim-rewards → 404 (206ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 10:26:09 AM
+    Request: {"wallet":"init_idempotent_1760797569008_m6gfycobc","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"error":"Profile not found"}
+
+
+[180] POST claim-rewards → 404 (238ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 10:26:09 AM
+    Request: {"wallet":"init_referrer_1760797569215_sd5czgkdb","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"error":"Profile not found"}
+
+
+[181] POST claim-rewards → 404 (269ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 10:26:09 AM
+    Request: {"wallet":"init_referred_1760797569215_c1nxt88iy","referralCode":"init_referrer_1760797569215_sd5czgkdb","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"error":"Profile not found"}
+
+
+[182] POST claim-rewards → 404 (217ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 10:26:09 AM
+    Request: {"wallet":"init_invalid_1760797569724_7xztppdlc","cluster":"devnet","treasurySig":"invalid_sig_not_mock"}
+    Response: {"error":"Profile not found"}
+
+
+[183] POST claim-rewards → 400 (149ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 10:26:10 AM
+    Request: {"cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"error":"wallet required"}
+
+
+[184] POST init-player → 201 (912ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:26:35 AM
+    Request: {"wallet":"init_test_1760797594197_8rl4q5ued","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"2098fc7b-06d2-4bf6-917e-c026be37b8cc","wallet_address":"init_test_1760797594197_8rl4q5ued","garage_level":1,"created_at":"2025-10-18T14:26:34.943793+00:00"},"units":[{"id":7,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":8,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":9,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[185] POST init-player → 201 (679ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:26:35 AM
+    Request: {"wallet":"init_idempotent_1760797595111_x197zjw6v","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"59841ceb-d9d3-4b8c-a8b7-4aacb94cd87b","wallet_address":"init_idempotent_1760797595111_x197zjw6v","garage_level":1,"created_at":"2025-10-18T14:26:35.622462+00:00"},"units":[{"id":10,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":11,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":12,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[186] POST init-player → 200 (495ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:26:36 AM
+    Request: {"wallet":"init_idempotent_1760797595111_x197zjw6v","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":true,"profile":{"user_id":"59841ceb-d9d3-4b8c-a8b7-4aacb94cd87b","wallet_address":"init_idempotent_1760797595111_x197zjw6v","garage_level":1,"created_at":"2025-10-18T14:26:35.622462+00:00"},"units":[{"id":10,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":11,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":12,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok"}
+
+
+[187] POST init-player → 201 (899ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:26:37 AM
+    Request: {"wallet":"init_referrer_1760797596286_ajn43ooaz","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"1c3dd9b8-a562-413b-808a-033cc5fdcec2","wallet_address":"init_referrer_1760797596286_ajn43ooaz","garage_level":1,"created_at":"2025-10-18T14:26:36.956665+00:00"},"units":[{"id":13,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":14,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":15,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[188] POST init-player → 201 (754ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:26:37 AM
+    Request: {"wallet":"init_referred_1760797596286_p2xinwgmy","referralCode":"init_referrer_1760797596286_ajn43ooaz","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"86bda569-0153-4503-a132-aa72db99047d","wallet_address":"init_referred_1760797596286_p2xinwgmy","garage_level":1,"created_at":"2025-10-18T14:26:37.699949+00:00"},"units":[{"id":16,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":17,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":18,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[189] POST init-player → 403 (540ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:26:38 AM
+    Request: {"wallet":"init_invalid_1760797597940_12nas67jo","cluster":"devnet","treasurySig":"invalid_sig_not_mock"}
+    Response: {"error":"Invalid treasury signature","details":"Non-base58 character"}
+
+
+[190] POST init-player → 400 (409ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:26:38 AM
+    Request: {"cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"error":"wallet required"}
+
+
+[191] POST init-player → 201 (1189ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:26:49 AM
+    Request: {"wallet":"upgrade_poor_1760797608405_ez6f7pe8g","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"e9eeca7f-cfcf-4a46-aa90-2f9eb6f445a8","wallet_address":"upgrade_poor_1760797608405_ez6f7pe8g","garage_level":1,"created_at":"2025-10-18T14:26:49.431089+00:00"},"units":[{"id":31,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":32,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":33,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[192] POST upgrade-garage → 400 (357ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/upgrade-garage
+    Time: 10/18/2025, 10:26:49 AM
+    Request: {"wallet":"upgrade_poor_1760797608405_ez6f7pe8g"}
+    Response: {"error":"Insufficient $OIL","required":2000,"current":0,"shortfall":2000}
+
+
+[193] POST init-player → 201 (1161ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:26:49 AM
+    Request: {"wallet":"init_test_1760797608398_mg3zp74td","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"13261f0f-df03-4fab-9f05-ff59a4b45c64","wallet_address":"init_test_1760797608398_mg3zp74td","garage_level":1,"created_at":"2025-10-18T14:26:49.421297+00:00"},"units":[{"id":25,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":26,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":27,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[194] POST init-player → 201 (645ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:26:50 AM
+    Request: {"wallet":"init_idempotent_1760797609561_is58qhbz8","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"eb883117-774e-4a5b-8826-6ef1060910b0","wallet_address":"init_idempotent_1760797609561_is58qhbz8","garage_level":1,"created_at":"2025-10-18T14:26:50.090364+00:00"},"units":[{"id":34,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":35,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":36,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[195] POST init-player → 200 (427ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:26:50 AM
+    Request: {"wallet":"init_idempotent_1760797609561_is58qhbz8","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":true,"profile":{"user_id":"eb883117-774e-4a5b-8826-6ef1060910b0","wallet_address":"init_idempotent_1760797609561_is58qhbz8","garage_level":1,"created_at":"2025-10-18T14:26:50.090364+00:00"},"units":[{"id":34,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":35,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":36,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok"}
+
+
+[196] POST init-player → 201 (687ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:26:51 AM
+    Request: {"wallet":"init_referrer_1760797610633_9chnbwxi4","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"61c0c619-1f70-4bc3-83a0-d46d8505c04e","wallet_address":"init_referrer_1760797610633_9chnbwxi4","garage_level":1,"created_at":"2025-10-18T14:26:51.13679+00:00"},"units":[{"id":46,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":47,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":48,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[197] POST init-player → 201 (465ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:26:51 AM
+    Request: {"wallet":"init_referred_1760797610633_kx6pe1lkn","referralCode":"init_referrer_1760797610633_9chnbwxi4","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"9ea8dacc-06e8-42ed-9dc1-ad592ce3ed67","wallet_address":"init_referred_1760797610633_kx6pe1lkn","garage_level":1,"created_at":"2025-10-18T14:26:51.65431+00:00"},"units":[{"id":52,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":53,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":54,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[198] POST init-player → 403 (358ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:26:52 AM
+    Request: {"wallet":"init_invalid_1760797611786_zzxvianv3","cluster":"devnet","treasurySig":"invalid_sig_not_mock"}
+    Response: {"error":"Invalid treasury signature","details":"Non-base58 character"}
+
+
+[199] POST init-player → 400 (354ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:26:52 AM
+    Request: {"cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"error":"wallet required"}
+
+
+[200] POST init-player → 201 (1188ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:26:49 AM
+    Request: {"wallet":"pack_limit_1760797608405_wa16d2h09","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"01f6b33c-c370-4557-b2e2-4d09b9aef5a7","wallet_address":"pack_limit_1760797608405_wa16d2h09","garage_level":1,"created_at":"2025-10-18T14:26:49.428934+00:00"},"units":[{"id":28,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":29,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":30,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[201] POST open-pack → 429 (356ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/open-pack
+    Time: 10/18/2025, 10:26:49 AM
+    Request: {"wallet":"pack_limit_1760797608405_wa16d2h09","packType":"booster","qty":11}
+    Response: {"ok":false,"error":"daily_pack_limit_exceeded","limit":10,"used":0,"requested":11}
+
+
+[202] POST init-player → 201 (820ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:26:50 AM
+    Request: {"wallet":"pack_info_1760797609951_dctsadpzv","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"ade453c4-55a7-4b98-a1a1-33949b86ed41","wallet_address":"pack_info_1760797609951_dctsadpzv","garage_level":1,"created_at":"2025-10-18T14:26:50.479282+00:00"},"units":[{"id":37,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":38,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":39,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[203] POST open-pack → 400 (408ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/open-pack
+    Time: 10/18/2025, 10:26:51 AM
+    Request: {"wallet":"pack_info_1760797609951_dctsadpzv","packType":"booster","qty":1}
+    Response: {"ok":false,"error":"insufficient_bonds","need":100,"have":0}
+
+
+[204] POST init-player → 201 (669ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:26:51 AM
+    Request: {"wallet":"pack_multi_1760797611181_82377do0o","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"d5de458c-d8a7-4368-856e-d7b57c19f833","wallet_address":"pack_multi_1760797611181_82377do0o","garage_level":1,"created_at":"2025-10-18T14:26:51.648678+00:00"},"units":[{"id":55,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":56,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":57,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[205] POST open-pack → 400 (494ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/open-pack
+    Time: 10/18/2025, 10:26:52 AM
+    Request: {"wallet":"pack_multi_1760797611181_82377do0o","packType":"booster","qty":2}
+    Response: {"ok":false,"error":"insufficient_bonds","need":200,"have":0}
+
+
+[206] POST open-pack → 400 (338ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/open-pack
+    Time: 10/18/2025, 10:26:52 AM
+    Request: {"wallet":"pack_multi_1760797611181_82377do0o","packType":"booster","qty":1}
+    Response: {"ok":false,"error":"insufficient_bonds","need":100,"have":0}
+
+
+[207] POST init-player → 201 (1125ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:26:49 AM
+    Request: {"wallet":"slots_test_1760797608406_3sxwrr4fb","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"83bd9d72-c438-46e3-b64e-10f34f2c4603","wallet_address":"slots_test_1760797608406_3sxwrr4fb","garage_level":1,"created_at":"2025-10-18T14:26:49.357236+00:00"},"units":[{"id":22,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":23,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":24,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[208] POST update-garage-slots → 200 (567ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/update-garage-slots
+    Time: 10/18/2025, 10:26:50 AM
+    Request: {"wallet":"slots_test_1760797608406_3sxwrr4fb","unitIds":[22,23,24]}
+    Response: {"ok":true,"slots":[{"position":1,"unit":{"id":22,"fuel":2,"name":"Ford F-150","level":1,"hp_base":4,"grip_pct":2,"tier_key":"beater"}},{"position":2,"unit":{"id":23,"fuel":2,"name":"Mazda MX-5 Miata","level":1,"hp_base":4,"grip_pct":2,"tier_key":"beater"}},{"position":3,"unit":{"id":24,"fuel":2,"name":"Honda Civic","level":1,"hp_base":4,"grip_pct":2,"tier_key":"beater"}}],"total_mp":12.24,"capacity":4}
+
+
+[209] POST init-player → 201 (641ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:26:50 AM
+    Request: {"wallet":"slots_exceed_1760797610101_v71sknq4u","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"4d813da4-66ad-4afe-807c-6fb51f1c35b8","wallet_address":"slots_exceed_1760797610101_v71sknq4u","garage_level":1,"created_at":"2025-10-18T14:26:50.601131+00:00"},"units":[{"id":40,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":41,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":42,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[210] POST update-garage-slots → 400 (254ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/update-garage-slots
+    Time: 10/18/2025, 10:26:50 AM
+    Request: {"wallet":"slots_exceed_1760797610101_v71sknq4u","unitIds":[999000,999001,999002,999003,999004]}
+    Response: {"error":"Garage capacity exceeded: 5 > 4"}
+
+
+[211] POST init-player → 201 (691ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:26:51 AM
+    Request: {"wallet":"slots_empty_1760797610996_3dbfdza0r","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"3345ea7b-d848-4e4b-8681-15cdc0a313f8","wallet_address":"slots_empty_1760797610996_3dbfdza0r","garage_level":1,"created_at":"2025-10-18T14:26:51.553374+00:00"},"units":[{"id":49,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":50,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":51,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[212] POST update-garage-slots → 200 (359ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/update-garage-slots
+    Time: 10/18/2025, 10:26:52 AM
+    Request: {"wallet":"slots_empty_1760797610996_3dbfdza0r","unitIds":[]}
+    Response: {"ok":true,"slots":[],"total_mp":0,"capacity":4}
+
+
+[213] POST init-player → 201 (658ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:26:52 AM
+    Request: {"wallet":"slots_mp_1760797612047_g9whmci0q","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"72b1ee69-8923-482f-96aa-194bfb11870a","wallet_address":"slots_mp_1760797612047_g9whmci0q","garage_level":1,"created_at":"2025-10-18T14:26:52.587471+00:00"},"units":[{"id":58,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":59,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":60,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[214] POST update-garage-slots → 200 (469ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/update-garage-slots
+    Time: 10/18/2025, 10:26:53 AM
+    Request: {"wallet":"slots_mp_1760797612047_g9whmci0q","unitIds":[58,59]}
+    Response: {"ok":true,"slots":[{"position":1,"unit":{"id":58,"fuel":2,"name":"Ford F-150","level":1,"hp_base":4,"grip_pct":2,"tier_key":"beater"}},{"position":2,"unit":{"id":59,"fuel":2,"name":"Mazda MX-5 Miata","level":1,"hp_base":4,"grip_pct":2,"tier_key":"beater"}}],"total_mp":8.16,"capacity":4}
+
+
+[215] POST init-player → 201 (1108ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:26:49 AM
+    Request: {"wallet":"claim_no_mp_1760797608398_flt8wxx2q","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"e3cdaf44-60a3-4d75-957a-4c8a73030bdd","wallet_address":"claim_no_mp_1760797608398_flt8wxx2q","garage_level":1,"created_at":"2025-10-18T14:26:48.995312+00:00"},"units":[{"id":19,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":20,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":21,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[216] POST update-garage-slots → 200 (442ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/update-garage-slots
+    Time: 10/18/2025, 10:26:49 AM
+    Request: {"wallet":"claim_no_mp_1760797608398_flt8wxx2q","unitIds":[]}
+    Response: {"ok":true,"slots":[],"total_mp":0,"capacity":4}
+
+
+[217] POST claim-rewards → 400 (464ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 10:26:50 AM
+    Request: {"wallet":"claim_no_mp_1760797608398_flt8wxx2q"}
+    Response: {"error":"No motor power: please add cars to garage slots","user_mp":0}
+
+
+[218] POST init-player → 201 (459ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:26:50 AM
+    Request: {"wallet":"claim_success_1760797610414_ql05uj8lr","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"4e7373d0-b4b7-447e-b871-13c23e0173a8","wallet_address":"claim_success_1760797610414_ql05uj8lr","garage_level":1,"created_at":"2025-10-18T14:26:50.738356+00:00"},"units":[{"id":43,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":44,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":45,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[219] POST update-garage-slots → 200 (481ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/update-garage-slots
+    Time: 10/18/2025, 10:26:51 AM
+    Request: {"wallet":"claim_success_1760797610414_ql05uj8lr","unitIds":[43,44]}
+    Response: {"ok":true,"slots":[{"position":1,"unit":{"id":43,"fuel":2,"name":"Ford F-150","level":1,"hp_base":4,"grip_pct":2,"tier_key":"beater"}},{"position":2,"unit":{"id":44,"fuel":2,"name":"Mazda MX-5 Miata","level":1,"hp_base":4,"grip_pct":2,"tier_key":"beater"}}],"total_mp":8.16,"capacity":4}
+
+
+[220] POST claim-rewards → 200 (559ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 10:26:53 AM
+    Request: {"wallet":"claim_success_1760797610414_ql05uj8lr"}
+    Response: {"ok":true,"claimed_amount":13974584.24,"new_balance":13974584.24,"network_share_pct":28.571,"hours_elapsed":489110.45,"user_mp":8.16,"network_mp":28.56,"referral_payouts":[]}
+
+
+[221] POST init-player → 201 (564ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:26:54 AM
+    Request: {"wallet":"claim_ref_l2_1760797613913_8bab6g6o3","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"6dd3cd42-a20e-4c77-886f-4d6936190f99","wallet_address":"claim_ref_l2_1760797613913_8bab6g6o3","garage_level":1,"created_at":"2025-10-18T14:26:54.315466+00:00"},"units":[{"id":61,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":62,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":63,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[222] POST init-player → 201 (487ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:26:54 AM
+    Request: {"wallet":"claim_ref_l1_1760797613913_cc5tsu6i9","referralCode":"claim_ref_l2_1760797613913_8bab6g6o3","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"8e181b01-c618-43f7-960d-86d236b96005","wallet_address":"claim_ref_l1_1760797613913_cc5tsu6i9","garage_level":1,"created_at":"2025-10-18T14:26:54.811278+00:00"},"units":[{"id":64,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":65,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":66,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[223] POST init-player → 201 (475ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:26:55 AM
+    Request: {"wallet":"claim_ref_claimer_1760797613913_17ndhllhu","referralCode":"claim_ref_l1_1760797613913_cc5tsu6i9","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"cef2eaf8-dea8-47a3-bdbd-057357808529","wallet_address":"claim_ref_claimer_1760797613913_17ndhllhu","garage_level":1,"created_at":"2025-10-18T14:26:55.281197+00:00"},"units":[{"id":67,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":68,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":69,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[224] POST update-garage-slots → 200 (489ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/update-garage-slots
+    Time: 10/18/2025, 10:26:55 AM
+    Request: {"wallet":"claim_ref_claimer_1760797613913_17ndhllhu","unitIds":[67,68]}
+    Response: {"ok":true,"slots":[{"position":1,"unit":{"id":67,"fuel":2,"name":"Ford F-150","level":1,"hp_base":4,"grip_pct":2,"tier_key":"beater"}},{"position":2,"unit":{"id":68,"fuel":2,"name":"Mazda MX-5 Miata","level":1,"hp_base":4,"grip_pct":2,"tier_key":"beater"}}],"total_mp":8.16,"capacity":4}
+
+
+[225] POST claim-rewards → 200 (770ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 10:26:58 AM
+    Request: {"wallet":"claim_ref_claimer_1760797613913_17ndhllhu"}
+    Response: {"ok":true,"claimed_amount":10869121.1,"new_balance":10869121.1,"network_share_pct":22.222,"hours_elapsed":489110.45,"user_mp":8.16,"network_mp":36.72,"referral_payouts":[{"generation":1,"wallet":"claim_ref_l1_1760797613913_cc5tsu6i9","amount":271728.03},{"generation":2,"wallet":"claim_ref_l2_1760797613913_8bab6g6o3","amount":135864.01}]}
+
+
+[226] POST init-player → 201 (640ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:26:59 AM
+    Request: {"wallet":"claim_rapid_1760797618712_i94hgacxm","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"87e8e1e9-6da4-4db7-95ff-094c9a3a940b","wallet_address":"claim_rapid_1760797618712_i94hgacxm","garage_level":1,"created_at":"2025-10-18T14:26:59.202749+00:00"},"units":[{"id":70,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":71,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":72,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[227] POST update-garage-slots → 200 (442ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/update-garage-slots
+    Time: 10/18/2025, 10:26:59 AM
+    Request: {"wallet":"claim_rapid_1760797618712_i94hgacxm","unitIds":[70,71]}
+    Response: {"ok":true,"slots":[{"position":1,"unit":{"id":70,"fuel":2,"name":"Ford F-150","level":1,"hp_base":4,"grip_pct":2,"tier_key":"beater"}},{"position":2,"unit":{"id":71,"fuel":2,"name":"Mazda MX-5 Miata","level":1,"hp_base":4,"grip_pct":2,"tier_key":"beater"}}],"total_mp":8.16,"capacity":4}
+
+
+[228] POST claim-rewards → 200 (607ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 10:27:01 AM
+    Request: {"wallet":"claim_rapid_1760797618712_i94hgacxm"}
+    Response: {"ok":true,"claimed_amount":8892917.28,"new_balance":8892917.28,"network_share_pct":18.182,"hours_elapsed":489110.45,"user_mp":8.16,"network_mp":44.88,"referral_payouts":[]}
+
+
+[229] POST claim-rewards → 429 (391ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 10:27:01 AM
+    Request: {"wallet":"claim_rapid_1760797618712_i94hgacxm"}
+    Response: {"error":"Must wait at least 36 seconds between claims","hours_elapsed":0.00018}
+
+
+[230] POST recycle-unit → 400 (276ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/recycle-unit
+    Time: 10/18/2025, 10:27:04 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","unitId":"00000000-0000-0000-0000-000000000000"}
+    Response: {"ok":false,"error":"wallet and unitId required"}
+
+
+[231] POST recycle-unit → 400 (124ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/recycle-unit
+    Time: 10/18/2025, 10:27:04 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","unitId":"00000000-0000-0000-0000-000000000000"}
+    Response: {"ok":false,"error":"wallet and unitId required"}
+
+
+[232] POST recycle-unit → 400 (144ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/recycle-unit
+    Time: 10/18/2025, 10:27:04 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","unitId":"00000000-0000-0000-0000-000000000000"}
+    Response: {"ok":false,"error":"wallet and unitId required"}
+
+
+[233] POST open-pack → 400 (282ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/open-pack
+    Time: 10/18/2025, 10:27:04 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","packType":"common","qty":1}
+    Response: {"ok":false,"error":"wallet and packType required"}
+
+
+[234] POST train-unit → 400 (221ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/train-unit
+    Time: 10/18/2025, 10:27:04 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","unitId":"00000000-0000-0000-0000-000000000000","levels":1}
+    Response: {"ok":false,"error":"wallet and unitId required"}
+
+
+[235] POST train-unit → 400 (141ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/train-unit
+    Time: 10/18/2025, 10:27:05 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","unitId":"00000000-0000-0000-0000-000000000000","levels":10}
+    Response: {"ok":false,"error":"wallet and unitId required"}
+
+
+[236] POST train-unit → 400 (125ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/train-unit
+    Time: 10/18/2025, 10:27:05 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","unitId":"00000000-0000-0000-0000-000000000000","levels":2}
+    Response: {"ok":false,"error":"wallet and unitId required"}
+
+
+[237] POST init-player → 201 (542ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:27:05 AM
+    Request: {"wallet":"upgrade_poor_1760797625076_qgt4l5k0a","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"d5480709-e338-4606-bf4f-c1239d71b6f6","wallet_address":"upgrade_poor_1760797625076_qgt4l5k0a","garage_level":1,"created_at":"2025-10-18T14:27:05.481534+00:00"},"units":[{"id":85,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":86,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":87,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[238] POST upgrade-garage → 400 (344ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/upgrade-garage
+    Time: 10/18/2025, 10:27:05 AM
+    Request: {"wallet":"upgrade_poor_1760797625076_qgt4l5k0a"}
+    Response: {"error":"Insufficient $OIL","required":2000,"current":0,"shortfall":2000}
+
+
+[239] POST claim-rewards → 400 (303ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 10:27:04 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9"}
+    Response: {"error":"wallet required"}
+
+
+[240] POST referral-capture → 409 (209ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 10:27:04 AM
+    Request: {"wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","code":"ref_1760797624652"}
+    Response: {"ok":false,"error":"duplicate","message":"Referrer already set, cannot change"}
+
+
+[241] POST referral-capture → 409 (229ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 10:27:05 AM
+    Request: {"wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","code":"ref_first_1760797624863"}
+    Response: {"ok":false,"error":"duplicate","message":"Referrer already set, cannot change"}
+
+
+[242] POST referral-capture → 409 (219ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 10:27:05 AM
+    Request: {"wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","code":"ref_second_1760797624863"}
+    Response: {"ok":false,"error":"duplicate","message":"Referrer already set, cannot change"}
+
+
+[243] POST referral-capture → 409 (208ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 10:27:05 AM
+    Request: {"wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","code":"ref_idempotent_1760797625312"}
+    Response: {"ok":false,"error":"duplicate","message":"Referrer already set, cannot change"}
+
+
+[244] POST referral-capture → 409 (222ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 10:27:05 AM
+    Request: {"wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","code":"ref_idempotent_1760797625312"}
+    Response: {"ok":false,"error":"duplicate","message":"Referrer already set, cannot change"}
+
+
+[245] POST referral-capture → 400 (129ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 10:27:05 AM
+    Request: {"code":"some-code"}
+    Response: {"ok":false,"error":"wallet and code required"}
+
+
+[246] POST referral-capture → 404 (210ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 10:27:06 AM
+    Request: {"wallet":"99NonExistentWallet99999999999999999999999","code":"some-code"}
+    Response: {"ok":false,"error":"profile not found"}
+
+
+[247] POST open-pack → 400 (243ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/open-pack
+    Time: 10/18/2025, 10:27:06 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","packType":"common","qty":1}
+    Response: {"ok":false,"error":"wallet and packType required"}
+
+
+[248] POST open-pack → 400 (458ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/open-pack
+    Time: 10/18/2025, 10:27:05 AM
+    Request: {"wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","packType":"booster","qty":1}
+    Response: {"ok":false,"error":"insufficient_bonds","need":100,"have":0}
+
+
+[249] POST open-pack → 400 (411ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/open-pack
+    Time: 10/18/2025, 10:27:06 AM
+    Request: {"wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","packType":"booster","qty":1}
+    Response: {"ok":false,"error":"insufficient_bonds","need":100,"have":0}
+
+
+[250] POST open-pack → 400 (271ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/open-pack
+    Time: 10/18/2025, 10:27:06 AM
+    Request: {"wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","packType":"booster","qty":1}
+    Response: {"ok":false,"error":"insufficient_bonds","need":100,"have":0}
+
+
+[251] GET economy-stats → 200 (347ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/economy-stats
+    Time: 10/18/2025, 10:27:06 AM
+    Request: null
+    Response: {"ok":true,"totals":{"bonds_minted":0,"bonds_burned":0,"players":0},"recents":[]}
+
+
+[252] POST sign-claim → 200 (223ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/sign-claim
+    Time: 10/18/2025, 10:27:06 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","amount":1.23,"seasonId":null}
+    Response: {"ok":true,"sig":"0BOiLLkL7xHwzAnwAnWC+cCT3r7+gwJL7HHQB3kGlyc=","multiplier":1}
+
+
+[253] GET list-seasons → 200 (420ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/list-seasons
+    Time: 10/18/2025, 10:27:06 AM
+    Request: null
+    Response: {"ok":true,"seasons":[{"id":1,"name":"Season 1","is_active":true,"emission_per_hour":100,"start_date":null,"end_date":null,"created_at":"2025-10-18T07:34:48.893469+00:00"}]}
+
+
+[254] POST toggle-season → 403 (162ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/toggle-season
+    Time: 10/18/2025, 10:27:07 AM
+    Request: {"seasonId":"00000000-0000-0000-0000-000000000001"}
+    Response: {"ok":false,"error":"forbidden","message":"Admin access required"}
+
+
+[255] POST init-player → 201 (736ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:27:05 AM
+    Request: {"wallet":"pack_limit_1760797624361_mv09r2f6a","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"a10f0fa5-3756-43a3-8c0f-3661420c96ee","wallet_address":"pack_limit_1760797624361_mv09r2f6a","garage_level":1,"created_at":"2025-10-18T14:27:04.95222+00:00"},"units":[{"id":76,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":77,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":78,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[256] POST open-pack → 429 (286ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/open-pack
+    Time: 10/18/2025, 10:27:05 AM
+    Request: {"wallet":"pack_limit_1760797624361_mv09r2f6a","packType":"booster","qty":11}
+    Response: {"ok":false,"error":"daily_pack_limit_exceeded","limit":10,"used":0,"requested":11}
+
+
+[257] POST init-player → 201 (560ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:27:05 AM
+    Request: {"wallet":"pack_info_1760797625384_300v3qhd4","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"54e497f8-2b18-4877-abb2-36d1448dd0b5","wallet_address":"pack_info_1760797625384_300v3qhd4","garage_level":1,"created_at":"2025-10-18T14:27:05.763078+00:00"},"units":[{"id":91,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":92,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":93,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[258] POST open-pack → 400 (425ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/open-pack
+    Time: 10/18/2025, 10:27:06 AM
+    Request: {"wallet":"pack_info_1760797625384_300v3qhd4","packType":"booster","qty":1}
+    Response: {"ok":false,"error":"insufficient_bonds","need":100,"have":0}
+
+
+[259] POST init-player → 201 (437ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:27:06 AM
+    Request: {"wallet":"pack_multi_1760797626370_utivjuimf","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"f765f67b-a96c-4669-8012-a2e25bba72f9","wallet_address":"pack_multi_1760797626370_utivjuimf","garage_level":1,"created_at":"2025-10-18T14:27:06.673311+00:00"},"units":[{"id":100,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":101,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":102,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[260] POST open-pack → 400 (378ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/open-pack
+    Time: 10/18/2025, 10:27:07 AM
+    Request: {"wallet":"pack_multi_1760797626370_utivjuimf","packType":"booster","qty":2}
+    Response: {"ok":false,"error":"insufficient_bonds","need":200,"have":0}
+
+
+[261] POST open-pack → 400 (407ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/open-pack
+    Time: 10/18/2025, 10:27:07 AM
+    Request: {"wallet":"pack_multi_1760797626370_utivjuimf","packType":"booster","qty":1}
+    Response: {"ok":false,"error":"insufficient_bonds","need":100,"have":0}
+
+
+[262] POST init-player → 201 (781ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:27:05 AM
+    Request: {"wallet":"init_test_1760797624349_kn4jpmh3h","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"7cf90225-a13b-482b-924a-8a82913b8283","wallet_address":"init_test_1760797624349_kn4jpmh3h","garage_level":1,"created_at":"2025-10-18T14:27:05.003694+00:00"},"units":[{"id":79,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":80,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":81,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[263] POST init-player → 201 (717ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:27:05 AM
+    Request: {"wallet":"init_idempotent_1760797625132_33iao53lx","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"b98d0895-4b86-42dd-ab32-f2d826cca5e3","wallet_address":"init_idempotent_1760797625132_33iao53lx","garage_level":1,"created_at":"2025-10-18T14:27:05.497923+00:00"},"units":[{"id":88,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":89,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":90,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[264] POST init-player → 200 (469ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:27:06 AM
+    Request: {"wallet":"init_idempotent_1760797625132_33iao53lx","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":true,"profile":{"user_id":"b98d0895-4b86-42dd-ab32-f2d826cca5e3","wallet_address":"init_idempotent_1760797625132_33iao53lx","garage_level":1,"created_at":"2025-10-18T14:27:05.497923+00:00"},"units":[{"id":88,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":89,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":90,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok"}
+
+
+[265] POST init-player → 201 (594ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:27:06 AM
+    Request: {"wallet":"init_referrer_1760797626319_zwbdyc4k2","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"11398207-b3ec-4aa3-9ea7-a1ee12cef112","wallet_address":"init_referrer_1760797626319_zwbdyc4k2","garage_level":1,"created_at":"2025-10-18T14:27:06.789585+00:00"},"units":[{"id":103,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":104,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":105,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[266] POST init-player → 201 (626ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:27:07 AM
+    Request: {"wallet":"init_referred_1760797626319_f3makmlvw","referralCode":"init_referrer_1760797626319_zwbdyc4k2","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"b818d5cd-823c-4fd0-b97e-e714416b5507","wallet_address":"init_referred_1760797626319_f3makmlvw","garage_level":1,"created_at":"2025-10-18T14:27:07.393153+00:00"},"units":[{"id":109,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":110,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":111,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[267] POST init-player → 403 (342ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:27:07 AM
+    Request: {"wallet":"init_invalid_1760797627540_ofopt47xo","cluster":"devnet","treasurySig":"invalid_sig_not_mock"}
+    Response: {"error":"Invalid treasury signature","details":"Non-base58 character"}
+
+
+[268] POST init-player → 400 (344ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:27:08 AM
+    Request: {"cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"error":"wallet required"}
+
+
+[269] POST init-player → 201 (767ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:27:05 AM
+    Request: {"wallet":"slots_test_1760797624362_skx9udxtw","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"3e7e46ab-214e-4ea0-bc53-4932f40fafd1","wallet_address":"slots_test_1760797624362_skx9udxtw","garage_level":1,"created_at":"2025-10-18T14:27:05.007294+00:00"},"units":[{"id":82,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":83,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":84,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[270] POST update-garage-slots → 200 (486ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/update-garage-slots
+    Time: 10/18/2025, 10:27:05 AM
+    Request: {"wallet":"slots_test_1760797624362_skx9udxtw","unitIds":[82,83,84]}
+    Response: {"ok":true,"slots":[{"position":1,"unit":{"id":82,"fuel":2,"name":"Ford F-150","level":1,"hp_base":4,"grip_pct":2,"tier_key":"beater"}},{"position":2,"unit":{"id":83,"fuel":2,"name":"Mazda MX-5 Miata","level":1,"hp_base":4,"grip_pct":2,"tier_key":"beater"}},{"position":3,"unit":{"id":84,"fuel":2,"name":"Honda Civic","level":1,"hp_base":4,"grip_pct":2,"tier_key":"beater"}}],"total_mp":12.24,"capacity":4}
+
+
+[271] POST init-player → 201 (630ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:27:06 AM
+    Request: {"wallet":"slots_exceed_1760797625616_iho58gsha","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"35c99d21-322a-4fb8-8887-94fad74ff3a6","wallet_address":"slots_exceed_1760797625616_iho58gsha","garage_level":1,"created_at":"2025-10-18T14:27:06.074294+00:00"},"units":[{"id":94,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":95,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":96,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[272] POST update-garage-slots → 400 (254ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/update-garage-slots
+    Time: 10/18/2025, 10:27:06 AM
+    Request: {"wallet":"slots_exceed_1760797625616_iho58gsha","unitIds":[999000,999001,999002,999003,999004]}
+    Response: {"error":"Garage capacity exceeded: 5 > 4"}
+
+
+[273] POST init-player → 201 (613ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:27:07 AM
+    Request: {"wallet":"slots_empty_1760797626502_2evzc1eet","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"0649ca3e-5cc7-475c-8f26-e41e22c45976","wallet_address":"slots_empty_1760797626502_2evzc1eet","garage_level":1,"created_at":"2025-10-18T14:27:06.981563+00:00"},"units":[{"id":106,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":107,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":108,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[274] POST update-garage-slots → 200 (378ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/update-garage-slots
+    Time: 10/18/2025, 10:27:07 AM
+    Request: {"wallet":"slots_empty_1760797626502_2evzc1eet","unitIds":[]}
+    Response: {"ok":true,"slots":[],"total_mp":0,"capacity":4}
+
+
+[275] POST init-player → 201 (701ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:27:08 AM
+    Request: {"wallet":"slots_mp_1760797627494_omydkccmn","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"c9fe94d1-05fa-4bbb-a6cd-10cfda4590cf","wallet_address":"slots_mp_1760797627494_omydkccmn","garage_level":1,"created_at":"2025-10-18T14:27:08.023069+00:00"},"units":[{"id":112,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":113,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":114,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[276] POST update-garage-slots → 200 (398ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/update-garage-slots
+    Time: 10/18/2025, 10:27:08 AM
+    Request: {"wallet":"slots_mp_1760797627494_omydkccmn","unitIds":[112,113]}
+    Response: {"ok":true,"slots":[{"position":1,"unit":{"id":112,"fuel":2,"name":"Ford F-150","level":1,"hp_base":4,"grip_pct":2,"tier_key":"beater"}},{"position":2,"unit":{"id":113,"fuel":2,"name":"Mazda MX-5 Miata","level":1,"hp_base":4,"grip_pct":2,"tier_key":"beater"}}],"total_mp":8.16,"capacity":4}
+
+
+[277] POST init-player → 201 (713ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:27:05 AM
+    Request: {"wallet":"claim_no_mp_1760797624349_ps9weskpx","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"515104dc-722a-4a8a-9895-af3289609139","wallet_address":"claim_no_mp_1760797624349_ps9weskpx","garage_level":1,"created_at":"2025-10-18T14:27:04.85459+00:00"},"units":[{"id":73,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":74,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":75,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[278] POST update-garage-slots → 200 (379ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/update-garage-slots
+    Time: 10/18/2025, 10:27:05 AM
+    Request: {"wallet":"claim_no_mp_1760797624349_ps9weskpx","unitIds":[]}
+    Response: {"ok":true,"slots":[],"total_mp":0,"capacity":4}
+
+
+[279] POST claim-rewards → 400 (402ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 10:27:05 AM
+    Request: {"wallet":"claim_no_mp_1760797624349_ps9weskpx"}
+    Response: {"error":"No motor power: please add cars to garage slots","user_mp":0}
+
+
+[280] POST init-player → 201 (601ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:27:06 AM
+    Request: {"wallet":"claim_success_1760797625844_5fryn6joo","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"b80eed02-a0da-4caf-ba2b-f84e06fe5480","wallet_address":"claim_success_1760797625844_5fryn6joo","garage_level":1,"created_at":"2025-10-18T14:27:06.317874+00:00"},"units":[{"id":97,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":98,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":99,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[281] POST update-garage-slots → 200 (445ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/update-garage-slots
+    Time: 10/18/2025, 10:27:06 AM
+    Request: {"wallet":"claim_success_1760797625844_5fryn6joo","unitIds":[97,98]}
+    Response: {"ok":true,"slots":[{"position":1,"unit":{"id":97,"fuel":2,"name":"Ford F-150","level":1,"hp_base":4,"grip_pct":2,"tier_key":"beater"}},{"position":2,"unit":{"id":98,"fuel":2,"name":"Mazda MX-5 Miata","level":1,"hp_base":4,"grip_pct":2,"tier_key":"beater"}}],"total_mp":8.16,"capacity":4}
+
+
+[282] POST claim-rewards → 200 (491ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 10:27:09 AM
+    Request: {"wallet":"claim_success_1760797625844_5fryn6joo"}
+    Response: {"ok":true,"claimed_amount":5434560.58,"new_balance":5434560.58,"network_share_pct":11.111,"hours_elapsed":489110.45,"user_mp":8.16,"network_mp":73.44,"referral_payouts":[]}
+
+
+[283] POST init-player → 201 (607ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:27:09 AM
+    Request: {"wallet":"claim_ref_l2_1760797629384_fwuknr2kc","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"d73cc7ef-47ab-42d3-99a1-5ece64e22c6d","wallet_address":"claim_ref_l2_1760797629384_fwuknr2kc","garage_level":1,"created_at":"2025-10-18T14:27:09.845715+00:00"},"units":[{"id":115,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":116,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":117,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[284] POST init-player → 201 (569ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:27:10 AM
+    Request: {"wallet":"claim_ref_l1_1760797629384_kyjkaz8do","referralCode":"claim_ref_l2_1760797629384_fwuknr2kc","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"f4e83eed-3f44-4329-80fb-25ef10c3dd03","wallet_address":"claim_ref_l1_1760797629384_kyjkaz8do","garage_level":1,"created_at":"2025-10-18T14:27:10.443957+00:00"},"units":[{"id":118,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":119,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":120,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[285] POST init-player → 201 (653ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:27:11 AM
+    Request: {"wallet":"claim_ref_claimer_1760797629384_8xtlox46k","referralCode":"claim_ref_l1_1760797629384_kyjkaz8do","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"62841983-228a-46f7-9d7c-1aca298c58a3","wallet_address":"claim_ref_claimer_1760797629384_8xtlox46k","garage_level":1,"created_at":"2025-10-18T14:27:11.049661+00:00"},"units":[{"id":121,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":122,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":123,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[286] POST update-garage-slots → 200 (569ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/update-garage-slots
+    Time: 10/18/2025, 10:27:11 AM
+    Request: {"wallet":"claim_ref_claimer_1760797629384_8xtlox46k","unitIds":[121,122]}
+    Response: {"ok":true,"slots":[{"position":1,"unit":{"id":121,"fuel":2,"name":"Ford F-150","level":1,"hp_base":4,"grip_pct":2,"tier_key":"beater"}},{"position":2,"unit":{"id":122,"fuel":2,"name":"Mazda MX-5 Miata","level":1,"hp_base":4,"grip_pct":2,"tier_key":"beater"}}],"total_mp":8.16,"capacity":4}
+
+
+[287] POST claim-rewards → 200 (788ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 10:27:14 AM
+    Request: {"wallet":"claim_ref_claimer_1760797629384_8xtlox46k"}
+    Response: {"ok":true,"claimed_amount":4891104.54,"new_balance":4891104.54,"network_share_pct":10,"hours_elapsed":489110.45,"user_mp":8.16,"network_mp":81.6,"referral_payouts":[{"generation":1,"wallet":"claim_ref_l1_1760797629384_kyjkaz8do","amount":122277.61},{"generation":2,"wallet":"claim_ref_l2_1760797629384_fwuknr2kc","amount":61138.81}]}
+
+
+[288] POST init-player → 201 (622ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:27:15 AM
+    Request: {"wallet":"claim_rapid_1760797634579_kier18jrw","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"547017ea-ffd3-4a93-81bd-5a0977edf22b","wallet_address":"claim_rapid_1760797634579_kier18jrw","garage_level":1,"created_at":"2025-10-18T14:27:15.039605+00:00"},"units":[{"id":124,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":125,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":126,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[289] POST update-garage-slots → 200 (511ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/update-garage-slots
+    Time: 10/18/2025, 10:27:15 AM
+    Request: {"wallet":"claim_rapid_1760797634579_kier18jrw","unitIds":[124,125]}
+    Response: {"ok":true,"slots":[{"position":1,"unit":{"id":124,"fuel":2,"name":"Ford F-150","level":1,"hp_base":4,"grip_pct":2,"tier_key":"beater"}},{"position":2,"unit":{"id":125,"fuel":2,"name":"Mazda MX-5 Miata","level":1,"hp_base":4,"grip_pct":2,"tier_key":"beater"}}],"total_mp":8.16,"capacity":4}
+
+
+[290] POST claim-rewards → 200 (571ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 10:27:17 AM
+    Request: {"wallet":"claim_rapid_1760797634579_kier18jrw"}
+    Response: {"ok":true,"claimed_amount":4446458.68,"new_balance":4446458.68,"network_share_pct":9.091,"hours_elapsed":489110.45,"user_mp":8.16,"network_mp":89.76,"referral_payouts":[]}
+
+
+[291] POST claim-rewards → 429 (313ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 10:27:17 AM
+    Request: {"wallet":"claim_rapid_1760797634579_kier18jrw"}
+    Response: {"error":"Must wait at least 36 seconds between claims","hours_elapsed":0.00016055555555555555}
+
+
+[292] POST recycle-unit → 400 (267ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/recycle-unit
+    Time: 10/18/2025, 10:27:32 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","unitId":"00000000-0000-0000-0000-000000000000"}
+    Response: {"ok":false,"error":"wallet and unitId required"}
+
+
+[293] POST recycle-unit → 400 (152ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/recycle-unit
+    Time: 10/18/2025, 10:27:32 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","unitId":"00000000-0000-0000-0000-000000000000"}
+    Response: {"ok":false,"error":"wallet and unitId required"}
+
+
+[294] POST recycle-unit → 400 (147ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/recycle-unit
+    Time: 10/18/2025, 10:27:33 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","unitId":"00000000-0000-0000-0000-000000000000"}
+    Response: {"ok":false,"error":"wallet and unitId required"}
+
+
+[295] POST open-pack → 400 (266ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/open-pack
+    Time: 10/18/2025, 10:27:32 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","packType":"common","qty":1}
+    Response: {"ok":false,"error":"wallet and packType required"}
+
+
+[296] POST train-unit → 400 (161ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/train-unit
+    Time: 10/18/2025, 10:27:32 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","unitId":"00000000-0000-0000-0000-000000000000","levels":1}
+    Response: {"ok":false,"error":"wallet and unitId required"}
+
+
+[297] POST train-unit → 400 (145ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/train-unit
+    Time: 10/18/2025, 10:27:33 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","unitId":"00000000-0000-0000-0000-000000000000","levels":10}
+    Response: {"ok":false,"error":"wallet and unitId required"}
+
+
+[298] POST train-unit → 400 (135ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/train-unit
+    Time: 10/18/2025, 10:27:33 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","unitId":"00000000-0000-0000-0000-000000000000","levels":2}
+    Response: {"ok":false,"error":"wallet and unitId required"}
+
+
+[299] POST claim-rewards → 400 (257ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 10:27:32 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9"}
+    Response: {"error":"wallet required"}
+
+
+[300] POST referral-capture → 409 (197ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 10:27:32 AM
+    Request: {"wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","code":"ref_1760797652737"}
+    Response: {"ok":false,"error":"duplicate","message":"Referrer already set, cannot change"}
+
+
+[301] POST referral-capture → 409 (222ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 10:27:33 AM
+    Request: {"wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","code":"ref_first_1760797652935"}
+    Response: {"ok":false,"error":"duplicate","message":"Referrer already set, cannot change"}
+
+
+[302] POST referral-capture → 409 (197ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 10:27:33 AM
+    Request: {"wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","code":"ref_second_1760797652935"}
+    Response: {"ok":false,"error":"duplicate","message":"Referrer already set, cannot change"}
+
+
+[303] POST referral-capture → 409 (198ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 10:27:33 AM
+    Request: {"wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","code":"ref_idempotent_1760797653355"}
+    Response: {"ok":false,"error":"duplicate","message":"Referrer already set, cannot change"}
+
+
+[304] POST referral-capture → 409 (434ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 10:27:33 AM
+    Request: {"wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","code":"ref_idempotent_1760797653355"}
+    Response: {"ok":false,"error":"duplicate","message":"Referrer already set, cannot change"}
+
+
+[305] POST referral-capture → 400 (151ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 10:27:34 AM
+    Request: {"code":"some-code"}
+    Response: {"ok":false,"error":"wallet and code required"}
+
+
+[306] POST referral-capture → 404 (110ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/referral-capture
+    Time: 10/18/2025, 10:27:34 AM
+    Request: {"wallet":"99NonExistentWallet99999999999999999999999","code":"some-code"}
+    Response: {"ok":false,"error":"profile not found"}
+
+
+[307] POST init-player → 201 (704ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:27:33 AM
+    Request: {"wallet":"upgrade_poor_1760797653182_8wpzfmaw7","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"ec0ace81-c2ce-4693-bf87-647e0e9aff0b","wallet_address":"upgrade_poor_1760797653182_8wpzfmaw7","garage_level":1,"created_at":"2025-10-18T14:27:33.749744+00:00"},"units":[{"id":139,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":140,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":141,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[308] POST upgrade-garage → 400 (445ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/upgrade-garage
+    Time: 10/18/2025, 10:27:34 AM
+    Request: {"wallet":"upgrade_poor_1760797653182_8wpzfmaw7"}
+    Response: {"error":"Insufficient $OIL","required":2000,"current":0,"shortfall":2000}
+
+
+[309] POST open-pack → 400 (483ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/open-pack
+    Time: 10/18/2025, 10:27:33 AM
+    Request: {"wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","packType":"booster","qty":1}
+    Response: {"ok":false,"error":"insufficient_bonds","need":100,"have":0}
+
+
+[310] POST open-pack → 400 (418ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/open-pack
+    Time: 10/18/2025, 10:27:34 AM
+    Request: {"wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","packType":"booster","qty":1}
+    Response: {"ok":false,"error":"insufficient_bonds","need":100,"have":0}
+
+
+[311] POST open-pack → 400 (339ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/open-pack
+    Time: 10/18/2025, 10:27:34 AM
+    Request: {"wallet":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","packType":"booster","qty":1}
+    Response: {"ok":false,"error":"insufficient_bonds","need":100,"have":0}
+
+
+[312] POST open-pack → 400 (219ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/open-pack
+    Time: 10/18/2025, 10:27:34 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","packType":"common","qty":1}
+    Response: {"ok":false,"error":"wallet and packType required"}
+
+
+[313] GET economy-stats → 200 (297ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/economy-stats
+    Time: 10/18/2025, 10:27:34 AM
+    Request: null
+    Response: {"ok":true,"totals":{"bonds_minted":0,"bonds_burned":0,"players":0},"recents":[]}
+
+
+[314] POST sign-claim → 200 (216ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/sign-claim
+    Time: 10/18/2025, 10:27:34 AM
+    Request: {"walletAddress":"27iC4pJHhc4ZnAsbmAPFHV6deWz3BWWqD9QFEJxoCun9","amount":1.23,"seasonId":null}
+    Response: {"ok":true,"sig":"0BOiLLkL7xHwzAnwAnWC+cCT3r7+gwJL7HHQB3kGlyc=","multiplier":1}
+
+
+[315] GET list-seasons → 200 (318ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/list-seasons
+    Time: 10/18/2025, 10:27:34 AM
+    Request: null
+    Response: {"ok":true,"seasons":[{"id":1,"name":"Season 1","is_active":true,"emission_per_hour":100,"start_date":null,"end_date":null,"created_at":"2025-10-18T07:34:48.893469+00:00"}]}
+
+
+[316] POST toggle-season → 403 (172ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/toggle-season
+    Time: 10/18/2025, 10:27:35 AM
+    Request: {"seasonId":"00000000-0000-0000-0000-000000000001"}
+    Response: {"ok":false,"error":"forbidden","message":"Admin access required"}
+
+
+[317] POST init-player → 201 (754ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:27:33 AM
+    Request: {"wallet":"pack_limit_1760797652490_tru83wjis","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"527b2882-6eb0-4e9f-8d2b-5ecb4437b7ff","wallet_address":"pack_limit_1760797652490_tru83wjis","garage_level":1,"created_at":"2025-10-18T14:27:33.111883+00:00"},"units":[{"id":130,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":131,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":132,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[318] POST open-pack → 429 (265ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/open-pack
+    Time: 10/18/2025, 10:27:33 AM
+    Request: {"wallet":"pack_limit_1760797652490_tru83wjis","packType":"booster","qty":11}
+    Response: {"ok":false,"error":"daily_pack_limit_exceeded","limit":10,"used":0,"requested":11}
+
+
+[319] POST init-player → 201 (629ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:27:34 AM
+    Request: {"wallet":"pack_info_1760797653511_w937fswh4","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"2166d0ee-999d-4736-b038-d5f03261d638","wallet_address":"pack_info_1760797653511_w937fswh4","garage_level":1,"created_at":"2025-10-18T14:27:34.000133+00:00"},"units":[{"id":142,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":143,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":144,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[320] POST open-pack → 400 (382ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/open-pack
+    Time: 10/18/2025, 10:27:34 AM
+    Request: {"wallet":"pack_info_1760797653511_w937fswh4","packType":"booster","qty":1}
+    Response: {"ok":false,"error":"insufficient_bonds","need":100,"have":0}
+
+
+[321] POST init-player → 201 (618ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:27:35 AM
+    Request: {"wallet":"pack_multi_1760797654523_k8nzoh8x9","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"7c962879-82b8-4368-a305-bbe15c2e2223","wallet_address":"pack_multi_1760797654523_k8nzoh8x9","garage_level":1,"created_at":"2025-10-18T14:27:35.010257+00:00"},"units":[{"id":160,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":161,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":162,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[322] POST open-pack → 400 (463ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/open-pack
+    Time: 10/18/2025, 10:27:35 AM
+    Request: {"wallet":"pack_multi_1760797654523_k8nzoh8x9","packType":"booster","qty":2}
+    Response: {"ok":false,"error":"insufficient_bonds","need":200,"have":0}
+
+
+[323] POST open-pack → 400 (342ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/open-pack
+    Time: 10/18/2025, 10:27:35 AM
+    Request: {"wallet":"pack_multi_1760797654523_k8nzoh8x9","packType":"booster","qty":1}
+    Response: {"ok":false,"error":"insufficient_bonds","need":100,"have":0}
+
+
+[324] POST init-player → 201 (714ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:27:33 AM
+    Request: {"wallet":"slots_test_1760797652492_sabu479vn","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"3f23f4a3-6256-401f-a46f-6fe5d7bb5176","wallet_address":"slots_test_1760797652492_sabu479vn","garage_level":1,"created_at":"2025-10-18T14:27:33.071441+00:00"},"units":[{"id":127,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":128,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":129,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[325] POST update-garage-slots → 200 (549ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/update-garage-slots
+    Time: 10/18/2025, 10:27:33 AM
+    Request: {"wallet":"slots_test_1760797652492_sabu479vn","unitIds":[127,128,129]}
+    Response: {"ok":true,"slots":[{"position":1,"unit":{"id":127,"fuel":2,"name":"Ford F-150","level":1,"hp_base":4,"grip_pct":2,"tier_key":"beater"}},{"position":2,"unit":{"id":128,"fuel":2,"name":"Mazda MX-5 Miata","level":1,"hp_base":4,"grip_pct":2,"tier_key":"beater"}},{"position":3,"unit":{"id":129,"fuel":2,"name":"Honda Civic","level":1,"hp_base":4,"grip_pct":2,"tier_key":"beater"}}],"total_mp":12.24,"capacity":4}
+
+
+[326] POST init-player → 201 (574ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:27:34 AM
+    Request: {"wallet":"slots_exceed_1760797653760_7c7m903dk","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"a33458f6-012f-4bca-9ead-ba8c71180cf2","wallet_address":"slots_exceed_1760797653760_7c7m903dk","garage_level":1,"created_at":"2025-10-18T14:27:34.177653+00:00"},"units":[{"id":148,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":149,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":150,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[327] POST update-garage-slots → 400 (223ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/update-garage-slots
+    Time: 10/18/2025, 10:27:34 AM
+    Request: {"wallet":"slots_exceed_1760797653760_7c7m903dk","unitIds":[999000,999001,999002,999003,999004]}
+    Response: {"error":"Garage capacity exceeded: 5 > 4"}
+
+
+[328] POST init-player → 201 (456ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:27:35 AM
+    Request: {"wallet":"slots_empty_1760797654558_lzrm7rdqt","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"ec6f2afc-e774-4499-afd2-dbb70a0dd275","wallet_address":"slots_empty_1760797654558_lzrm7rdqt","garage_level":1,"created_at":"2025-10-18T14:27:34.872219+00:00"},"units":[{"id":154,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":155,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":156,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[329] POST update-garage-slots → 200 (353ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/update-garage-slots
+    Time: 10/18/2025, 10:27:35 AM
+    Request: {"wallet":"slots_empty_1760797654558_lzrm7rdqt","unitIds":[]}
+    Response: {"ok":true,"slots":[],"total_mp":0,"capacity":4}
+
+
+[330] POST init-player → 201 (494ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:27:35 AM
+    Request: {"wallet":"slots_mp_1760797655368_e6r38tvnr","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"4e794eba-30f9-419a-966c-1bfb9e694200","wallet_address":"slots_mp_1760797655368_e6r38tvnr","garage_level":1,"created_at":"2025-10-18T14:27:35.702903+00:00"},"units":[{"id":166,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":167,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":168,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[331] POST update-garage-slots → 200 (466ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/update-garage-slots
+    Time: 10/18/2025, 10:27:36 AM
+    Request: {"wallet":"slots_mp_1760797655368_e6r38tvnr","unitIds":[166,167]}
+    Response: {"ok":true,"slots":[{"position":1,"unit":{"id":166,"fuel":2,"name":"Ford F-150","level":1,"hp_base":4,"grip_pct":2,"tier_key":"beater"}},{"position":2,"unit":{"id":167,"fuel":2,"name":"Mazda MX-5 Miata","level":1,"hp_base":4,"grip_pct":2,"tier_key":"beater"}}],"total_mp":8.16,"capacity":4}
+
+
+[332] POST init-player → 201 (1015ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:27:33 AM
+    Request: {"wallet":"init_test_1760797652479_dm87son60","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"040a4cc3-03bf-4afb-b105-0be94d632661","wallet_address":"init_test_1760797652479_dm87son60","garage_level":1,"created_at":"2025-10-18T14:27:33.293304+00:00"},"units":[{"id":136,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":137,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":138,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[333] POST init-player → 201 (672ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:27:34 AM
+    Request: {"wallet":"init_idempotent_1760797653496_bonec642h","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"7a3fdc28-a61c-4eba-9785-f98877f34a1a","wallet_address":"init_idempotent_1760797653496_bonec642h","garage_level":1,"created_at":"2025-10-18T14:27:33.999722+00:00"},"units":[{"id":145,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":146,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":147,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[334] POST init-player → 200 (331ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:27:34 AM
+    Request: {"wallet":"init_idempotent_1760797653496_bonec642h","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":true,"profile":{"user_id":"7a3fdc28-a61c-4eba-9785-f98877f34a1a","wallet_address":"init_idempotent_1760797653496_bonec642h","garage_level":1,"created_at":"2025-10-18T14:27:33.999722+00:00"},"units":[{"id":145,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":146,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":147,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok"}
+
+
+[335] POST init-player → 201 (549ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:27:35 AM
+    Request: {"wallet":"init_referrer_1760797654500_4b6gmezfh","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"da02ec67-0370-4ad3-9a27-fb0a1a2d9633","wallet_address":"init_referrer_1760797654500_4b6gmezfh","garage_level":1,"created_at":"2025-10-18T14:27:34.914312+00:00"},"units":[{"id":157,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":158,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":159,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[336] POST init-player → 201 (669ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:27:35 AM
+    Request: {"wallet":"init_referred_1760797654501_j8be7l0fz","referralCode":"init_referrer_1760797654500_4b6gmezfh","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"64bbfed1-68c0-4635-be20-2a8bff55634f","wallet_address":"init_referred_1760797654501_j8be7l0fz","garage_level":1,"created_at":"2025-10-18T14:27:35.514801+00:00"},"units":[{"id":163,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":164,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":165,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[337] POST init-player → 403 (380ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:27:36 AM
+    Request: {"wallet":"init_invalid_1760797655719_gj8tn7c0s","cluster":"devnet","treasurySig":"invalid_sig_not_mock"}
+    Response: {"error":"Invalid treasury signature","details":"Non-base58 character"}
+
+
+[338] POST init-player → 400 (326ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:27:36 AM
+    Request: {"cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"error":"wallet required"}
+
+
+[339] POST init-player → 201 (824ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:27:33 AM
+    Request: {"wallet":"claim_no_mp_1760797652479_45n37xpig","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"4449eec8-15f8-417d-8bc2-6ca32e90d0d7","wallet_address":"claim_no_mp_1760797652479_45n37xpig","garage_level":1,"created_at":"2025-10-18T14:27:33.122646+00:00"},"units":[{"id":133,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":134,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":135,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[340] POST update-garage-slots → 200 (399ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/update-garage-slots
+    Time: 10/18/2025, 10:27:33 AM
+    Request: {"wallet":"claim_no_mp_1760797652479_45n37xpig","unitIds":[]}
+    Response: {"ok":true,"slots":[],"total_mp":0,"capacity":4}
+
+
+[341] POST claim-rewards → 400 (433ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 10:27:34 AM
+    Request: {"wallet":"claim_no_mp_1760797652479_45n37xpig"}
+    Response: {"error":"No motor power: please add cars to garage slots","user_mp":0}
+
+
+[342] POST init-player → 201 (484ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:27:34 AM
+    Request: {"wallet":"claim_success_1760797654139_uzo5si3i7","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"05d3d6c5-0465-4f08-b654-283ad6c9d2ad","wallet_address":"claim_success_1760797654139_uzo5si3i7","garage_level":1,"created_at":"2025-10-18T14:27:34.473563+00:00"},"units":[{"id":151,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":152,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":153,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[343] POST update-garage-slots → 200 (391ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/update-garage-slots
+    Time: 10/18/2025, 10:27:35 AM
+    Request: {"wallet":"claim_success_1760797654139_uzo5si3i7","unitIds":[151,152]}
+    Response: {"ok":true,"slots":[{"position":1,"unit":{"id":151,"fuel":2,"name":"Ford F-150","level":1,"hp_base":4,"grip_pct":2,"tier_key":"beater"}},{"position":2,"unit":{"id":152,"fuel":2,"name":"Mazda MX-5 Miata","level":1,"hp_base":4,"grip_pct":2,"tier_key":"beater"}}],"total_mp":8.16,"capacity":4}
+
+
+[344] POST claim-rewards → 200 (707ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 10:27:37 AM
+    Request: {"wallet":"claim_success_1760797654139_uzo5si3i7"}
+    Response: {"ok":true,"claimed_amount":3373175.59,"new_balance":3373175.59,"network_share_pct":6.897,"hours_elapsed":489110.46,"user_mp":8.16,"network_mp":118.32,"referral_payouts":[]}
+
+
+[345] POST init-player → 201 (662ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:27:38 AM
+    Request: {"wallet":"claim_ref_l2_1760797657724_29aqr0m7d","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"c2b7b700-afbe-4dda-8c51-2333f7800bef","wallet_address":"claim_ref_l2_1760797657724_29aqr0m7d","garage_level":1,"created_at":"2025-10-18T14:27:38.224078+00:00"},"units":[{"id":169,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":170,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":171,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[346] POST init-player → 201 (629ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:27:39 AM
+    Request: {"wallet":"claim_ref_l1_1760797657724_1p4wz47t3","referralCode":"claim_ref_l2_1760797657724_29aqr0m7d","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"c3518519-e856-4c27-952c-e77f08091cdc","wallet_address":"claim_ref_l1_1760797657724_1p4wz47t3","garage_level":1,"created_at":"2025-10-18T14:27:38.888652+00:00"},"units":[{"id":172,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":173,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":174,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[347] POST init-player → 201 (727ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:27:39 AM
+    Request: {"wallet":"claim_ref_claimer_1760797657724_5xz5myylq","referralCode":"claim_ref_l1_1760797657724_1p4wz47t3","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"3c82463a-3053-4e7d-ba29-d5ae97da1e74","wallet_address":"claim_ref_claimer_1760797657724_5xz5myylq","garage_level":1,"created_at":"2025-10-18T14:27:39.53047+00:00"},"units":[{"id":175,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":176,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":177,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[348] POST update-garage-slots → 200 (506ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/update-garage-slots
+    Time: 10/18/2025, 10:27:40 AM
+    Request: {"wallet":"claim_ref_claimer_1760797657724_5xz5myylq","unitIds":[175,176]}
+    Response: {"ok":true,"slots":[{"position":1,"unit":{"id":175,"fuel":2,"name":"Ford F-150","level":1,"hp_base":4,"grip_pct":2,"tier_key":"beater"}},{"position":2,"unit":{"id":176,"fuel":2,"name":"Mazda MX-5 Miata","level":1,"hp_base":4,"grip_pct":2,"tier_key":"beater"}}],"total_mp":8.16,"capacity":4}
+
+
+[349] POST claim-rewards → 200 (933ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 10:27:43 AM
+    Request: {"wallet":"claim_ref_claimer_1760797657724_5xz5myylq"}
+    Response: {"ok":true,"claimed_amount":3155551.37,"new_balance":3155551.37,"network_share_pct":6.452,"hours_elapsed":489110.46,"user_mp":8.16,"network_mp":126.48,"referral_payouts":[{"generation":1,"wallet":"claim_ref_l1_1760797657724_1p4wz47t3","amount":78888.78},{"generation":2,"wallet":"claim_ref_l2_1760797657724_29aqr0m7d","amount":39444.39}]}
+
+
+[350] POST init-player → 201 (803ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/init-player
+    Time: 10/18/2025, 10:27:43 AM
+    Request: {"wallet":"claim_rapid_1760797663186_qlpa1fonc","cluster":"devnet","treasurySig":"mock_ok"}
+    Response: {"ok":true,"existing":false,"profile":{"user_id":"1af2c8ab-b132-433e-9887-a360549d41d0","wallet_address":"claim_rapid_1760797663186_qlpa1fonc","garage_level":1,"created_at":"2025-10-18T14:27:43.794139+00:00"},"units":[{"id":178,"name":"Ford F-150","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":179,"name":"Mazda MX-5 Miata","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2},{"id":180,"name":"Honda Civic","tier_key":"beater","level":1,"hp_base":4,"grip_pct":2,"fuel":2}],"txId":"mock_ok","message":"Player initialized successfully with 3 starter cars"}
+
+
+[351] POST update-garage-slots → 200 (774ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/update-garage-slots
+    Time: 10/18/2025, 10:27:44 AM
+    Request: {"wallet":"claim_rapid_1760797663186_qlpa1fonc","unitIds":[178,179]}
+    Response: {"ok":true,"slots":[{"position":1,"unit":{"id":178,"fuel":2,"name":"Ford F-150","level":1,"hp_base":4,"grip_pct":2,"tier_key":"beater"}},{"position":2,"unit":{"id":179,"fuel":2,"name":"Mazda MX-5 Miata","level":1,"hp_base":4,"grip_pct":2,"tier_key":"beater"}}],"total_mp":8.16,"capacity":4}
+
+
+[352] POST claim-rewards → 200 (522ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 10:27:46 AM
+    Request: {"wallet":"claim_rapid_1760797663186_qlpa1fonc"}
+    Response: {"ok":true,"claimed_amount":2964305.84,"new_balance":2964305.84,"network_share_pct":6.061,"hours_elapsed":489110.46,"user_mp":8.16,"network_mp":134.64,"referral_payouts":[]}
+
+
+[353] POST claim-rewards → 429 (311ms)
+    URL: https://bqadvqjadkfjheyubplk.supabase.co/functions/v1/claim-rewards
+    Time: 10/18/2025, 10:27:46 AM
+    Request: {"wallet":"claim_rapid_1760797663186_qlpa1fonc"}
+    Response: {"error":"Must wait at least 36 seconds between claims","hours_elapsed":0.00016361111111111112}
+
+
+================================================================================
+End of Report

@@ -1,0 +1,73 @@
+{
+  "theme": "Cars",
+  "tiers": {
+    "beater": {
+      "display": "Beater",
+      "hp_base": 4,
+      "fuel": 2,
+      "grip_pct": 2.0
+    },
+    "street": {
+      "display": "Street",
+      "hp_base": 12,
+      "fuel": 4,
+      "grip_pct": 3.0
+    },
+    "sport": {
+      "display": "Sport",
+      "hp_base": 36,
+      "fuel": 8,
+      "grip_pct": 4.5
+    },
+    "supercar": {
+      "display": "Supercar",
+      "hp_base": 108,
+      "fuel": 16,
+      "grip_pct": 6.75
+    },
+    "hypercar": {
+      "display": "Hypercar",
+      "hp_base": 324,
+      "fuel": 32,
+      "grip_pct": 10.125
+    },
+    "prototype": {
+      "display": "Prototype",
+      "hp_base": 972,
+      "fuel": 64,
+      "grip_pct": 15.1875
+    },
+    "godspeed": {
+      "display": "Godspeed",
+      "hp_base": 2916,
+      "fuel": 128,
+      "grip_pct": 22.78125
+    }
+  },
+  "levelMultipliers": {
+    "1": 1.00,
+    "2": 1.15,
+    "3": 1.30
+  },
+  "tierOrder": [
+    "beater",
+    "street",
+    "sport",
+    "supercar",
+    "hypercar",
+    "prototype",
+    "godspeed"
+  ],
+  "formulas": {
+    "hp": "hp_base * levelMultiplier[level]",
+    "mp": "hp * (1 + grip_pct / 100)",
+    "trainingCost": "sum of (10 * targetLevel) for each level gained"
+  },
+  "rules": {
+    "training": "Upgrades level within current tier (1→3). Never changes tier.",
+    "recycle": "Only way to tier-up. 20% promote to next tier L1, 80% burn unit.",
+    "splits": "All bond spends: 80% burn, 10% referral, 10% treasury"
+  }
+}
+
+

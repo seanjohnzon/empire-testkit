@@ -1,0 +1,21 @@
+{
+  "name": "scalpquest-backend",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.4",
+    "axios": "^1.7.7",
+    "ccxt": "^4.4.10",
+    "express": "^4.19.2",
+    "openai": "^4.57.0"
+  }
+}
+
+
+

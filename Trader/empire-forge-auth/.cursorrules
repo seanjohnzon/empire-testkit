@@ -1,0 +1,19 @@
+# Cursor guardrails
+- Do NOT modify these files unless this prompt explicitly says so:
+  - .env.example
+  - .github/workflows/ci.yml
+  - .github/workflows/pages.yml
+  - package.json
+  - scripts/snapshot.mjs
+  - tests/reqmap.ts
+- If a protected file must change, propose an explicit unified diff and wait for approval.
+
+# Diffs & style
+- Show surgical diffs file-by-file; avoid unrelated formatting.
+- Ask to APPLY after showing changes.
+
+# Testing
+- Use existing npm scripts: "test", "ci:html", "snapshot".
+- When logic changes in app functions, add minimal coverage or curl examples.
+
+

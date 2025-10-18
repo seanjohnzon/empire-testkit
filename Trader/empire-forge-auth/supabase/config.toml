@@ -1,0 +1,31 @@
+project_id = "bqadvqjadkfjheyubplk"
+
+[functions.wallet-auth]
+verify_jwt = false
+
+[functions.request-init]
+verify_jwt = false
+
+[functions.verify-init]
+verify_jwt = false
+
+[functions.dev-airdrop]
+verify_jwt = false
+
+[functions.open-pack]
+verify_jwt = false
+
+[functions.train-unit]
+verify_jwt = false
+
+[functions.claim-rewards]
+verify_jwt = false
+
+[functions.ensure-profile]
+verify_jwt = false
+
+[functions.get-balances]
+verify_jwt = false
+
+[functions.list-units]
+verify_jwt = false

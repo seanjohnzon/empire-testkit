@@ -1,0 +1,35 @@
+name: CI HTML Report
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Node (NO cache line)
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # Install deps WITHOUT a lockfile
+      - name: Install deps
+        run: npm install --no-audit --no-fund
+
+      # Run your existing test/report script
+      - run: npm run ci:html
+
+      # (keep your artifact upload step if you already have one)
+      - uses: actions/upload-artifact@v4
+        with:
+          name: html-report
+          path: |
+            reports/index.html
+            reports/assets
+            .vitest-reports/json.json
+            reports/requirements.md
